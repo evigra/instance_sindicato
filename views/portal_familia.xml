@@ -1,0 +1,65 @@
+<odoo>
+
+    <!-- ========================================= -->
+    <!-- TARJETA "MIS EVENTOS" EN EL PORTAL       -->
+    <!-- ========================================= -->
+
+
+    <template id="portal_user_dropdown_familia"
+              inherit_id="portal.user_dropdown">
+
+        <xpath expr="//div[@id='o_logout_divider']" position="before">
+            <a href="/my/familia"
+               role="menuitem"
+               class="dropdown-item ps-3"
+               id="o_credential">
+                <i class="fa fa-fw fa-id-card me-1 small text-primary text-primary-emphasis"/>
+                Mi Familia
+            </a>
+        </xpath>
+    </template>
+
+    <template id="portal_familia"   name="Mi familia">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">Mi familia</t>
+            <div class="container">
+                
+                <!-- Título -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2>Mi familia </h2>
+                    </div>
+                </div>
+
+                <!-- Lista de eventos -->
+                <div class="row">
+                    <t t-if="familiares">
+                        <t t-foreach="familiares" t-as="familiar">
+                            <a class="col-md-6 col-lg-4 mb-4" t-att-href="'/my/eventos/%s' % familiar.id">    
+                                <div class="o_kanban_record d-flex shadow-sm cursor-pointer p-0 row">
+                                    
+                                    <div class="col pt-3 pb-2 px-3 justify-content-between">
+                                        <h5 class="card-title">
+                                            <t t-esc="familiar.name"/>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </t>
+                    </t>
+                    <!-- No hay eventos -->
+                    <t t-else="">
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                No tienes familia registrada.
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+
+</odoo>

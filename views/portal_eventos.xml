@@ -1,0 +1,207 @@
+<odoo>
+
+    <!-- ========================================= -->
+    <!-- TARJETA "MIS EVENTOS" EN EL PORTAL       -->
+    <!-- ========================================= -->
+
+
+    <template id="portal_user_dropdown_credential"
+              inherit_id="portal.user_dropdown">
+
+        <xpath expr="//div[@id='o_logout_divider']" position="before">
+
+            <a href="/my/credencial"
+               role="menuitem"
+               class="dropdown-item ps-3"
+               id="o_credential">
+                <i class="fa fa-fw fa-id-card me-1 small text-primary text-primary-emphasis"/>
+                Mi Credencial
+            </a>
+            <!--
+            <a href="/my/familia"
+               role="menuitem"
+               class="dropdown-item ps-3"
+               id="o_credential">
+                <i class="fa fa-fw fa-id-card me-1 small text-primary text-primary-emphasis"/>
+                Mi Familia
+            </a>
+            -->
+        </xpath>
+
+    </template>
+
+    <template id="portal_my_home_eventos"    name="Mis Eventos"
+              inherit_id="portal.portal_my_home"        priority="30">
+
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+
+            <div class="o_portal_category row g-2 mt-3" id="portal_common_eventos">
+                <t t-call="portal.portal_docs_entry" t-if="False"/>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
+                    <t t-set="title">Registros o Eventos</t>
+                    <t t-set="text">Aqui encontraras </t>
+                    <t t-set="url" t-value="'/my/eventos'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </div>
+
+        </xpath>
+    </template>
+
+    <template id="portal_eventos"   name="Mis Eventos">
+        <t t-call="portal.portal_layout">
+            <t t-set="title">Mis Eventos o Registros</t>
+            <div class="container">
+                <!-- Breadcrumb 
+                <div class="row">
+                    <div class="col-12">
+                        <t t-call="portal.portal_breadcrumbs"/>
+                    </div>
+                </div>
+                -->
+                <!-- Título -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2>   Mis Eventos o Registros </h2>
+                    </div>
+                </div>
+
+                <!-- Lista de eventos -->
+                <div class="row">
+                    <t t-if="eventos">
+                        <t t-foreach="eventos" t-as="evento">
+                            <a class="col-md-6 col-lg-4 mb-4" t-att-href="'/my/eventos/%s' % evento.id">    
+                                <div class="o_kanban_record d-flex shadow-sm cursor-pointer p-0 row">
+                                    
+                                    <div class="col-4 text-bg-primary p-2 text-center d-flex flex-column justify-content-center">
+                                        <span style="font-size:50px" t-esc="evento.fecha.day"/>
+                                        <span t-esc="format_date(evento.fecha, format='MMMM', locale='es_MX')"/><br/>
+                                        <span t-esc="evento.fecha.year"/>
+
+                                    </div>
+                                    <div class="col pt-3 pb-2 px-3 justify-content-between">
+                                        <h5 class="card-title">
+                                            <t t-esc="evento.name"/>
+                                        </h5>
+                                        <p class="card-text">
+                                            <strong>
+                                                Vigencia:
+                                            </strong><br/>
+                                            <t t-if="evento.fecha_publicacion != evento.fecha_termino">
+                                                del
+                                                <span t-esc="format_date(evento.fecha_publicacion, format='dd', locale='es_MX')"/> de  
+                                                <span t-esc="format_date(evento.fecha_publicacion, format='MMMM', locale='es_MX')"/> 
+                                                al 
+                                                <span t-esc="format_date(evento.fecha_termino, format='dd', locale='es_MX')"/> de
+                                                <span t-esc="format_date(evento.fecha_termino, format='MMMM', locale='es_MX')"/>
+                                            </t>
+                                            <t t-else="">                                            
+                                                <span t-esc="format_date(evento.fecha_termino, format='dd', locale='es_MX')"/> de
+                                                <span t-esc="format_date(evento.fecha_termino, format='MMMM', locale='es_MX')"/>
+                                            </t>
+                                        </p>
+                                        <!--
+                                        <a t-att-href="'/my/eventos/%s' % evento.id" class="btn btn-primary">
+                                            Ver evento
+                                        </a>
+                                        -->
+                                    </div>
+                                </div>
+                            </a>
+                        </t>
+                    </t>
+                    <!-- No hay eventos -->
+                    <t t-else="">
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                No tienes eventos disponibles.
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="portal_evento_detalle"
+              name="Detalle del Evento">
+
+        <t t-call="portal.portal_layout">
+
+            <t t-if="evento">
+
+                <t t-set="title">
+                    <t t-esc="evento.name"/>
+                </t>
+                <div class="container">
+                    <!--
+                    <t t-call="portal.portal_breadcrumbs"/>
+                    -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2>
+                                <t t-esc="evento.name"/>
+                            </h2>
+                            <hr/>
+                            <p>
+                                <strong>Fecha de publicación:</strong>
+                                <t t-esc="evento.fecha_publicacion"/>
+                            </p>
+                            <p t-if="evento.fecha_termino">
+                                <strong>Fecha de término:</strong>
+                                <t t-esc="evento.fecha_termino"/>
+                            </p>
+                            <!--
+                            <p t-if="evento.descripcion">
+                                <t t-esc="evento.descripcion"/>
+                            </p>
+                            -->
+                            <a href="/my/eventos"
+                            class="btn btn-secondary">
+                                Regresar a mis eventos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
+                <!--
+    
+    <template id="portal_my_eventos" name="Mis Eventos">
+        <t t-call="portal.portal_layout">
+            <div class="container">
+                <h2 class="mb-4">
+                    Mis eventos
+                </h2>
+                <div class="row">
+                    <t t-foreach="eventos" t-as="evento">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h3 class="card-title">
+                                        <t t-esc="evento.name"/> 
+                                    </h3>
+                                    <h5 class="card-title">
+                                        <t t-esc="evento.fecha"/>
+                                    </h5>
+                                    <h7 class="card-title">
+                                        <t t-esc="evento.fecha_publicacion"/>
+                                        <t t-esc="evento.fecha_termino"/>
+                                    </h7>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+         -->
+       
+

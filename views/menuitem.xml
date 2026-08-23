@@ -1,0 +1,64 @@
+<odoo>
+    <record id='eventos_model_action' model='ir.actions.act_window'>
+        <field name="name">Eventos</field>
+        <field name="res_model">eventos</field>
+        <field name="view_mode">list,form</field>
+        
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Crea un nuevo evento
+          </p>
+          <p>
+            Tu podras definir el tipo de evento (Reunion Sindical, Evento, Encuesta)
+            
+          </p>
+        </field>
+    </record>
+    <record id='asistencias_model_action' model='ir.actions.act_window'>
+        <field name="name">Asistencias</field>
+        <field name="res_model">asistencias</field>
+        <field name="view_mode">list,form</field>
+        
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Crea un nuevo evento
+          </p>
+          <p>
+            Tu podras definir el tipo de evento (Reunion Sindical, Evento, Encuesta)
+            
+          </p>
+        </field>
+    </record>
+
+    <menuitem name="Eventos" id="menu_eventos_root" sequence="220" groups="instance_sindicato.eventos_group_user"/>
+    <menuitem name="Evento"        action="eventos_model_action"       parent="menu_eventos_root" id="opcion_evento" sequence="100" groups="instance_sindicato.eventos_group_user"/>
+    <menuitem name="Asistencia"    action="asistencias_model_action"   parent="menu_eventos_root" id="opcion_asistencia" sequence="100" groups="instance_sindicato.eventos_group_user"/>
+
+    
+<!--
+
+
+    <menuitem name="Geolocation" parent="fleet.menu_root" id="gpsmap_geolocation" groups="fleet.fleet_group_user" />
+    <menuitem name="Geolocation" parent="fleet.fleet_configuration" id="gpsmap_configuration" sequence="2" groups="fleet.fleet_group_user"/>
+    <menuitem name="GPS" parent="fleet.menu_fleet_reporting" id="gpsmap_report" sequence="2" groups="fleet.fleet_group_user"/>
+    
+    <menuitem name="Configuration" parent="fleet.menu_root" id="fleet.fleet_configuration" sequence="100" groups="fleet.fleet_group_user"/>
+    <menuitem action="fleet.fleet_vehicle_model_action" parent="fleet.fleet_configuration" id="fleet.fleet_vehicle_model_menu" groups="fleet.fleet_group_manager" sequence="1"/>
+    <menuitem action="fleet.fleet_vehicle_model_brand_action" parent="fleet.fleet_configuration" id="fleet.fleet_vehicle_model_brand_menu"  groups="fleet.fleet_group_manager" sequence="2"/>
+    <menuitem action="fleet.fleet_vehicle_service_types_action" parent="fleet.fleet_configuration" id="fleet.fleet_vehicle_service_types_menu" groups="fleet.fleet_group_manager" sequence="3"/>
+        
+    <record id="action_gpsmap_maponline" model="ir.actions.client">
+        <field name="name">Map Online</field>
+        <field name="tag">gpsmap.maponline</field>
+    </record>
+    <menuitem id="menu_gpsmap_maponline" name="Online Map" sequence="1" parent="gpsmap_geolocation" action="action_gpsmap_maponline" groups="fleet.fleet_group_user"/>
+
+    <record id='fleet_gps_devices_action' model='ir.actions.act_window'>
+        <field name="name">GPS Devices</field>
+        <field name="res_model">gps_devices</field>
+    </record>
+    <menuitem action="fleet_gps_devices_action" parent="gpsmap_configuration" id="fleet_gps_devices_menu" groups="fleet.fleet_group_manager"/>
+-->
+
+
+</odoo>

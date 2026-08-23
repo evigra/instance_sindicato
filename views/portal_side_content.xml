@@ -1,0 +1,24 @@
+<odoo>
+
+    <template
+        id="portal_side_content_menu"
+        inherit_id="portal.side_content">
+
+        <xpath expr="//div[contains(@class,'d-flex') and contains(@class,'gap-3')]"
+               position="after">        
+                <a class="nav-link px-0" href="/my/eventos">
+                    <i class="fa fa-calendar me-2"/>
+                    Eventos
+                </a>
+                <a class="nav-link px-0" href="/my/credencial">
+                    <i class="fa fa-id-card me-2"/>
+                    Mi credencial
+                </a>
+                <a class="nav-link px-0" href="/my/documentos">
+                    <i class="fa fa-file-text me-2"/>
+                    Documentos
+                </a>
+        </xpath>
+    </template>
+
+</odoo>

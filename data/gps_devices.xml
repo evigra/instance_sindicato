@@ -1,0 +1,140 @@
+<odoo>
+
+        <!--
+<odoo noupdate="0">
+        <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+        -->
+
+        <record id="gps_uhcam01" model="gps_devices"> 
+            <field name="name">CERFAR 01 </field>
+            <field name="uniqueid">028042257350</field>
+            <field name="model">GT</field>
+            <field name="port">5002</field>
+            <field name="phone">3141480095</field>
+        </record>
+        <record id="gps_uhcam02" model="gps_devices"> 
+            <field name="name">CERFAR 02 </field>
+            <field name="uniqueid">864895034507333</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone">3141480124</field>
+        </record>
+
+        <record id="gps_uhcam03" model="gps_devices"> 
+            <field name="name">CERFAR 03 </field>
+            <field name="uniqueid">352672104475157</field>
+            <field name="model">GT06</field>
+            <field name="port">5023</field>
+            <field name="phone">3141479771</field>            
+        </record>
+
+        <record id="gps_uhcam04" model="gps_devices"> 
+            <field name="name">CERFAR 04 </field>
+            <field name="uniqueid">864895036371449</field>
+            <field name="model"></field>
+            <field name="port"></field>
+            <field name="phone"></field>
+        </record>
+
+        <record id="gps_uhcam05" model="gps_devices"> 
+            <field name="name">CERFAR 05 </field>
+            <field name="uniqueid">352672105926695</field>
+            <field name="model"></field>
+            <field name="port">5023</field>
+            <field name="phone">3121134324</field>
+            
+        </record>
+
+        <record id="gps_uhcam06" model="gps_devices"> 
+            <field name="name">CERFAR 06</field>
+            <field name="uniqueid">1632221724</field>
+            <field name="model">J16</field>
+            <field name="port">5013</field>
+            <field name="phone">3121133585</field>
+        </record>
+
+        <record id="gps_casillas01" model="gps_devices"> 
+            <field name="name">Tk103 1407 - Casillas 01</field>
+            <field name="uniqueid">864895036371407</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone">3131439912</field>
+        </record>
+
+        <record id="gps_fer01" model="gps_devices"> 
+            <field name="name">FER 01 GT06 5853</field>
+            <field name="uniqueid">352672105925853</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone">3141479935</field>
+        </record>  
+
+        <record id="gps_movil" model="gps_devices"> 
+            <field name="name">Movil Iman</field>
+            <field name="uniqueid">864925030143039</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone"></field>
+        </record>
+
+        <record id="gps_gv300" model="gps_devices"> 
+            <field name="name">GV3004</field>
+            <field name="uniqueid">861074022305513</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone"></field>
+        </record>
+
+        <record id="gps_gt06" model="gps_devices"> 
+            <field name="name">GT06 - 1297</field>
+            <field name="uniqueid">352672104131297</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone"></field>
+        </record>
+
+        <record id="gps_gt" model="gps_devices"> 
+            <field name="name">GT - 5731</field>
+            <field name="uniqueid">028042257731</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone"></field>
+        </record>
+        <record id="gps_michoacana01" model="gps_devices"> 
+            <field name="name">Michoacana 01</field>
+            <field name="uniqueid">352672105886626</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone">3121134369</field>
+        </record>
+
+        <record id="gps_michoacana02" model="gps_devices"> 
+            <field name="name">Michoacana 02</field>
+            <field name="uniqueid">352672105925978</field>
+            <field name="model">TK108</field>
+            <field name="port">5001</field>
+            <field name="phone">3121134292</field>
+        </record>
+
+
+        <record id="gps_rogelio" model="gps_devices"> 
+            <field name="name">TAX ROG 01 </field>
+            <field name="uniqueid">864895034504801</field>
+            <field name="model">TK103</field>
+            <field name="port">5001</field>
+            <field name="phone">7531471210</field>
+            
+        </record>
+
+        <record id="gps_movil_mini1" model="gps_devices"> 
+            <field name="name">Movil Mini 01 </field>
+            <field name="uniqueid">072105052658</field>
+            <field name="model"></field>
+            <field name="port"></field>
+            <field name="phone"></field>
+        </record>
+</odoo>
+
+<!--
+https://docplayer.net/35177622-Gsm-gprs-gps-tracker-model-tk200.html
+-->

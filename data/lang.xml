@@ -1,0 +1,7 @@
+<odoo>
+
+    <record id="base.lang_es_mx" model="res.lang">
+        <field name="active">True</field>
+    </record>
+
+</odoo>

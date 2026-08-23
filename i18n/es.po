@@ -1,0 +1,314 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* instance_solesgps
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20220915\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-07 17:46+0000\n"
+"PO-Revision-Date: 2023-07-07 17:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+msgid "+52 (312) 454 - 9998"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Access controls</font>"
+msgstr "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Controles de Acceso</font>"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Locate your vehicles</font>"
+msgstr "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Localiza vehiculos</font>"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Mirror Account</font>"
+msgstr "<font style=\"font-size: 62px;\" class=\"o_default_snippet_text\">Cuenta Espejo</font>"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus_thanks
+msgid ""
+"<i class=\"fa fa-1x fa-fw fa-envelope "
+"mr-2\"/><span>contacto@solesgps.com</span>"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus_thanks
+msgid ""
+"<i class=\"fa fa-map-marker fa-fw mr-2\"/><span class=\"o_force_ltr\">Priv "
+"Bugambilias 144</span>"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus_thanks
+msgid ""
+"<i class=\"fa fa-phone fa-fw mr-2\"/><span class=\"o_force_ltr\">+52 (312) "
+"454 - 9998</span>"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid ""
+"<span class=\"carousel-control-next-icon\"/>\n"
+"                                <span class=\"sr-only o_default_snippet_text\">Next</span>"
+msgstr ""
+"<span class=\"carousel-control-next-icon\"/>\n"
+"                                <span class=\"sr-only o_default_snippet_text\">Siguiente</span>"
+
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid ""
+"<span class=\"carousel-control-prev-icon\"/>\n"
+"                                <span class=\"sr-only o_default_snippet_text\">Previous</span>"
+msgstr ""
+"<span class=\"carousel-control-prev-icon\"/>\n"
+"                                <span class=\"sr-only o_default_snippet_text\">Anterior</span>"
+
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_copyright_company_name
+msgid ""
+"<span class=\"o_footer_copyright_name mr-2\">Copyright &amp;copy; "
+"SolesGPS</span>"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid "About us"
+msgstr "Acerca de"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Alerts"
+msgstr "Alertas"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Areas of interest"
+msgstr "Areas de interes"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid ""
+"At SolesGPS, we understand the importance of vehicle safety and protection. \n"
+"                                    That's why we offer comprehensive solutions that include the installation of \n"
+"                                    state-of-the-art tracking devices, advanced monitoring software, \n"
+"                                    and reliable support services."
+msgstr ""
+"En SolesGPS, entendemos la importancia de la seguridad y protección del vehículo. \n"
+"Por eso ofrecemos soluciones integrales que incluyen la instalación de"
+"dispositivos de rastreo de última generación, software de monitoreo avanzado,"
+"y servicios de apoyo fiables."
+
+#. module: instance_solesgps
+#: model:ir.model,name:instance_solesgps.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: instance_solesgps
+#: model:ir.model.fields,field_description:instance_solesgps.field_fleet_vehicle__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: instance_solesgps
+#: model:ir.model,name:instance_solesgps.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+msgid "Contact us"
+msgstr "Contactanos"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Create your areas of importance and classify them by color."
+msgstr "Crea tus areas de interes clasificandolas por color"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Engine stop"
+msgstr "Paro de Motor"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Geolocate assets"
+msgstr "Geolocaliza tus activos"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "History Map"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+msgid "Home"
+msgstr "Inicio"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid ""
+"If you are looking for a reliable and effective vehicle tracking solution, \n"
+"                                    you are in the right place. Contact us today and let us show you how \n"
+"                                    we can help you protect and optimize your vehicles!"
+msgstr ""
+"Si está buscando una solución de rastreo de vehículos confiable y efectiva, \n"
+"Estás en el lugar correcto. Contáctenos hoy y permítanos mostrarle cómo"
+"¡podemos ayudarlo a proteger y optimizar sus vehículos!"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Locate them and watch their journey every minute with our platform."
+msgstr "Localízalos y observa su recorrido minuto a minuto con nuestra plataforma."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+msgid "Login"
+msgstr "Iniciar sesion"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Manage the entry and exit of your vehicles."
+msgstr "Gestiona la entrada y salida de tus vehículos."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Next"
+msgstr "Siguiente"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid ""
+"Our team of highly trained and dedicated professionals is ready to provide \n"
+"                                    you with the best advice and personalized attention. \n"
+"                                    We work closely with our clients to understand their specific needs \n"
+"                                    and offer solutions tailored to their requirements."
+msgstr ""
+"Nuestro equipo de profesionales altamente capacitados y dedicados está listo para brindar "
+"el mejor asesoramiento y atención personalizada."
+"Trabajamos en estrecha colaboración con nuestros clientes para entender sus necesidades específicas "
+"y ofrecer soluciones adaptadas a sus necesidades"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Perform engine stop, any day, at any time."
+msgstr "Realice la parada del motor, cualquier día, en cualquier momento."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Previous"
+msgstr "Anterior"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Receive alerts for speeding, geofences, etc."
+msgstr "Recibe alertas por exceso de velocidad, geocercas, etc."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Share the location to the owner of the merchandise."
+msgstr "Comparte la ubicación al propietario de la mercancía."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Smart Report"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_contactus_thanks
+msgid "SolesGPS"
+msgstr ""
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Street View"
+msgstr ""
+
+#. module: instance_solesgps
+#: model:ir.model.fields,field_description:instance_solesgps.field_res_config_settings__sync_devices
+msgid "Sync Devices"
+msgstr "Sincronizar dispositivos"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid ""
+"They will have a history and a simulation of the route carried out, to "
+"detail the movements carried out previously."
+msgstr ""
+"Contarán con un historial y una simulación del recorrido realizado, para "
+"detallar los movimientos realizados previamente."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid "Track your assets that are updated every minute."
+msgstr "Realice un seguimiento de sus activos que se actualizan cada minuto."
+
+#. module: instance_solesgps
+#: model:ir.model,name:instance_solesgps.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid ""
+"We are committed to ensuring that our customers get accurate, \n"
+"                                    real-time information about the location and status of their vehicles at all times."
+msgstr ""
+"Estamos comprometidos en garantizar que nuestros clientes obtengan información precisa "
+"sobre la ubicación y estado de sus vehículos en todo momento."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_aboutus
+msgid ""
+"We pride ourselves on building strong, long-lasting relationships with our clients, \n"
+"                                    based on trust, transparency, and exceptional service.\n"
+"                                    We are passionate about helping our clients achieve their goals and improve the \n"
+"                                    efficiency of their operations."
+msgstr ""
+"Nos enorgullecemos de construir relaciones sólidas y duraderas con nuestros clientes,"
+"basado en la confianza, la transparencia y un servicio excepcional."
+"Nos apasiona ayudar a nuestros clientes a alcanzar sus objetivos y mejorar la"
+"eficiencia de sus operaciones"
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid ""
+"You will have a street or driver view, so you can have a better perspective "
+"of your location."
+msgstr ""
+"Tendrá una vista de la calle o del conductor, para que pueda tener una mejor perspectiva "
+"de la ubicación."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.website_homepage
+msgid ""
+"You will have access to smart reports, machine hours, daily km, etc, to make"
+" the right decisions at the right times."
+msgstr ""
+"Tendrás acceso a informes inteligentes, horas máquina, km diarios, etc, para tomar "
+"las decisiones correctas, en los momentos correctos."
+
+#. module: instance_solesgps
+#: model_terms:ir.ui.view,arch_db:instance_solesgps.footer_custom_instance
+msgid "contacto@solesgps.com"
+msgstr ""

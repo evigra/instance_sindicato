@@ -1,0 +1,22 @@
+<odoo>
+
+    
+    <data>
+        <record id="fetchmail_catchall" model="fetchmail.server"> 
+            <field name="name">allcatch@solesgps.com</field>
+            <field name="server_type">imap</field>
+            <field name="server">solesgps.com</field>
+            <field name="port">993</field>
+            <field name="is_ssl"  eval="True"/>
+            <field name="user">allcatch@solesgps.com</field>
+            <field name="password">EvG30JiC06</field>
+
+            
+        </record>
+    </data>
+    <!--
+
+        https://www.odoo.com/documentation/15.0/es/applications/general/email_communication/email_servers.html#manage-inbound-messages
+
+    -->       
+</odoo>

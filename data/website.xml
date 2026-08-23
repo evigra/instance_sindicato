@@ -1,0 +1,12 @@
+<odoo>
+
+
+    <record id="website_solesgps" model="website">
+        <field name="name">SolesGPS</field>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+
+
+
+</odoo>

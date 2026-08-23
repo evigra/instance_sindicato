@@ -1,0 +1,164 @@
+<odoo>
+    <data>
+
+        <record id="base.partner_admin" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="name">Administrator</field>
+            <field name="email">webmaster@solesgps.com</field>            
+        </record>
+
+
+        <!--#########################-->
+        <record id="partner_cerfar_gustavo" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">JESUS GUSTAVO CERVANTES FARIAS</field>
+            <!--
+            <field name="email">jeremy_1186@hotmail.com</field>        
+            -->
+            <field name="email">contacto@solesgps.com</field>        
+            <field name="lang">es_MX</field>
+            <field name="vat">CEFJ861114NL2</field>
+            <field name="phone">52 (314) 133 - 8086</field>
+            <field name="zip">28800</field>
+            <field name="country_id" ref="base.mx"/>
+        </record>
+
+        <record id="partner_cerfar_paola" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Paola Infante</field>
+            <!--
+            <field name="email">jeremy_1186@hotmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>
+            <field name="phone">52 (753) 120 - 3785</field>
+            <field name="country_id" ref="base.mx" />
+        </record>
+
+        <record id="partner_cerfar" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">CERFAR</field>
+            <!--
+            <field name="email">jeremy_1186@hotmail.com</field>        
+            -->
+            <field name="email">contacto@solesgps.com</field>        
+            <field name="lang">es_MX</field>
+            
+            <field name="phone">52 (314) 133 - 8086</field>
+            <field name="zip">28800</field>
+            <field name="country_id" ref="base.mx"/>
+            <field name="customer_rank" eval="1"/>
+            <field name="child_ids" eval="[(6,0,[
+                ref('partner_cerfar_gustavo'),
+                ref('partner_cerfar_paola')
+            ])]"/>
+        </record>
+
+        <!--#########################-->
+
+        <record id="partner_michoacana_edgar" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Edgar Roel Valencia Diaz</field>
+            <!--
+            <field name="email">colimalamichoacana15@gmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>            
+            <field name="phone">52 (331) 517 - 8658</field>
+            <field name="zip">44730</field>
+            <field name="country_id" ref="base.mx" />
+        </record>
+
+        <record id="partner_michoacana_janet" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="name">Janet</field>
+            <!--
+            <field name="email">colimalamichoacana15@gmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>            
+            <field name="phone">52 (312) 122 - 0154</field>
+            <field name="zip">44730</field>
+            <field name="country_id" ref="base.mx" />
+        </record>
+
+
+        <record id="partner_michoacana" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">La Michoacana</field>
+            <!--
+            <field name="email">colimalamichoacana15@gmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>            
+            <field name="vat">VADE780703EC1</field>
+            <field name="phone">52 (331) 517 - 8658</field>
+            <field name="zip">44730</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="customer_rank" eval="1"/>
+            <field name="child_ids" eval="[(6,0,[
+                ref('partner_michoacana_edgar'),
+                ref('partner_michoacana_janet')
+            ])]"/>
+
+        </record>
+
+
+        <!--#########################-->
+
+        <record id="partner_soles_evigra" model="res.partner">
+            <field name="company_type">person</field>
+            <field name="name">Eduardo</field>
+            <field name="email">e.vizcaino@solesgps.com</field>        
+            <field name="lang">es_MX</field>
+            <field name="phone">52 (314) 352 0972</field>
+            <field name="vat">VIGE850830GKA</field>
+            <field name="street">Priv Bugambilias #144</field>
+            <field name="street2">Jardines de Bugambilias</field>
+            <field name="city">Villa de Alvarez</field>
+            <field name="zip">28978</field>
+            <field name="country_id" ref="base.mx" />            
+        </record>
+
+       <record id="partner_taxi_rogelio" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Taxi Rogelio</field>
+            <!--
+            <field name="email">roboba@gmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>
+            <field name="phone">52 (312) 318 - 0113</field>
+            <field name="country_id" ref="base.mx" />
+        </record>
+
+       <record id="partner_unico" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">Unico</field>
+            <!--
+            <field name="email">roboba@gmail.com</field>        
+            -->
+            <field name="lang">es_MX</field>
+            <field name="phone">52 (312) 318 - 0113</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="customer_rank" eval="1"/>
+            <field name="child_ids" eval="[(6,0,[
+                ref('partner_soles_evigra'),
+                ref('partner_taxi_rogelio')
+            ])]"/>
+        </record>
+
+
+        <record id="base.partner_root" model="res.partner">
+            <field name="company_type">company</field>
+            <field name="name">SolesGPS Bot</field>
+            <field name="email">bot@solesgps.com</field>            
+            <field name="lang">es_MX</field>
+        </record>
+
+    </data>        
+
+</odoo>
+
+
+
+<!--
+            https://www.xvideos.com/video362303/corrida_en_la_garganta_criada_brasilena
+            https://www.xvideos.com/video51371647/comiendo_a_mi_sirvienta_con_b_ella_disfruta_mucho_en_mi_polla+
+
+-->    

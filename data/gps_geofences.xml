@@ -1,0 +1,208 @@
+<odoo>
+    <data noupdate="1">
+        <record id="geofences_michoacana_matriz" model="gps_geofences"> 
+            <field name="name">Matriz</field>
+            <field name="description">Matriz Cremeria La Michoacana</field>
+            <field name="area">-103.71771062032774 19.240499842613143, -103.71699178831174 19.241477342501884, -103.71796811239317 19.241477342501884, -103.7186762155731 19.24108229143424, -103.71771062032774 19.240499842613143</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_michoacana')
+            ])]"/>
+        </record>
+        <record id="geofences_michoacana_pinosuarez" model="gps_geofences"> 
+            <field name="name">Pino Suarez</field>
+            <field name="description">Sucursal Pino Suarez</field>
+            <field name="area">-103.73248395605965 19.24995298471366, -103.73184176821508 19.251108022845862, -103.7308734907607 19.250576103882207, -103.73160305161275 19.24941280671822, -103.73248395605965 19.24995298471366</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_michoacana')
+            ])]"/>
+        </record>
+        <record id="geofences_michoacana_benitojuarez" model="gps_geofences"> 
+            <field name="name">Benito Juarez</field>
+            <field name="description">Sucursal Benito Juarez</field>
+            <field name="area">-103.73958834071662 19.264797797238607, -103.73896606822517 19.265932136306684, -103.73986729045417 19.266489174939558, -103.74059148688819 19.265405479858373, -103.73958834071662 19.264797797238607</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_michoacana')
+            ])]"/>
+        </record>
+
+        <record id="geofences_pto_manzanillo" model="gps_geofences"> 
+            <field name="name">Pto Manzanillo</field>
+            <field name="description">Puerto de Manzanillo</field>
+            <field name="area">-104.29846688821155 19.05740306835261, -104.29366036965686 19.058782212668415, -104.29074417448432 19.076340147813408, -104.29342638349921 19.076968804970445, -104.29271828031928 19.07940229405631, -104.29479967451483 19.078449181756202, -104.2961849549532 19.082090421379633, -104.29800885708333 19.08178624213523, -104.29474729092122 19.072514785083232, -104.3003262856722 19.071419673896777, -104.30482818897082 19.085365695424695, -104.29696853515412 19.08724515394912, -104.2949300563028 19.08738709965358, -104.29354603645112 19.086545562627933, -104.28712442202503 19.078663573188994, -104.28758576197559 19.078308690007837, -104.28757503313953 19.07684859120728, -104.2868132857793 19.076808032723577, -104.28637340350086 19.077142639917202, -104.28493573946888 19.07503358934233, -104.2844529418462 19.073319965982947, -104.2850108413213 19.071109467074535, -104.28626075072224 19.068333964879233, -104.2867757348531 19.067340228114038, -104.28943648619587 19.064744316213066, -104.29058604401736 19.058881281747173, -104.29104738396792 19.057704954193838, -104.29226802910237 19.05680472969674, -104.29809378708272 19.05546613265336, -104.3031138660016 19.055192327381892, -104.30359666362428 19.05618613695109, -104.30054967418336 19.061218864093217, -104.29846688821155 19.05740306835261</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_pto_mzo_ocupa" model="gps_geofences"> 
+            <field name="name">Ocupa</field>
+            <field name="description">Ocupa</field>
+            <field name="area">-104.3022915917404 19.05573289553983, -104.29989369688109 19.055824163716444, -104.2999312478073 19.0567672652675, -104.30049987611845 19.057928388306475, -104.29959865388945 19.058323878140712, -104.30055352029875 19.060161794013286, -104.30132063207701 19.059877855836003, -104.30111141977385 19.05938603320004, -104.30196972665861 19.057494784115086, -104.30242033777311 19.056435066755363, -104.3022915917404 19.05573289553983</field>
+            <field name="attributes"></field>
+            <field name="color">blue</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_pto_mzo_multimodal" model="gps_geofences"> 
+            <field name="name">Multimodal</field>
+            <field name="description">Multimodal</field>
+            <field name="area">-104.29460799450497 19.056829036076312, -104.293712136694 19.057077486575253, -104.29408228153805 19.05792931403193, -104.29487621540646 19.057701146392155, -104.29460799450497 19.056829036076312</field>
+            <field name="attributes"></field>
+            <field name="color">blue</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_pto_mzo_timsa" model="gps_geofences"> 
+            <field name="name">Timsa</field>
+            <field name="description">Timsa</field>
+            <field name="area">-104.29064315028887 19.061434318199325, -104.29232757755022 19.06158642656991, -104.29289620586138 19.058483388201015, -104.29158728786211 19.058300854724116, -104.29114740558367 19.058807891663914, -104.29064315028887 19.061434318199325</field>
+            <field name="attributes"></field>
+            <field name="color">blue</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_pto_mzo_junta" model="gps_geofences"> 
+            <field name="name">La Junta</field>
+            <field name="description">La Junta</field>
+            <field name="area">-104.29070146157699 19.06181015162038, -104.29226250722365 19.061967329911333, -104.29165632798629 19.063949791693265, -104.2906317241426 19.06377233444343, -104.29070146157699 19.06181015162038</field>
+            <field name="attributes"></field>
+            <field name="color">blue</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_uhcam" model="gps_geofences"> 
+            <field name="name">UHCAM</field>
+            <field name="description">Patio UHCAM</field>
+            <field name="area">-104.22958033473739 19.044657307945737, -104.2248811045433 19.043845978904454, -104.22288554103622 19.047253534226396, -104.22438757808456 19.048815307033454, -104.22803538234481 19.047476645527293, -104.22958033473739 19.044657307945737</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_uhcam_lucero" model="gps_geofences"> 
+            <field name="name">LE</field>
+            <field name="description">Patio LE Servicios Especializados</field>
+            <field name="area">-102.23097239389476 17.964836952856373, -102.22845111742076 17.96424501765632, -102.22947035684642 17.96169355013658, -102.23218475236949 17.96225487615145, -102.23097239389476 17.964836952856373</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('instance_solesgps.company_uhcam')
+            ])]"/>
+        </record>
+
+        <record id="geofences_mixteca" model="gps_geofences"> 
+            <field name="name">Mixteca</field>
+            <field name="description">Patio Mixteca</field>
+            <field name="area">-104.26492924293865 19.107573186662037, -104.26334137520183 19.108642714546438, -104.26487023434032 19.10914959738392, -104.26591629585613 19.108140899006994, -104.26492924293865 19.107573186662037</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_mixteca'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_caseta_cuyutlan" model="gps_geofences"> 
+            <field name="name">Caseta Cuyutlan</field>
+            <field name="description">Caseta Cuyutlan</field>
+            <field name="area">-104.08385059642997 18.93140333690194, -104.07732746410575 18.927587461673053, -104.0795161466619 18.92515175106568, -104.0864684324285 18.928886492812335, -104.08385059642997 18.93140333690194</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record> 
+
+        <record id="geofences_caseta_sanmarcos" model="gps_geofences"> 
+            <field name="name">Caseta San Marcos</field>
+            <field name="description">Caseta San Marcos</field>
+            <field name="area">-103.52661501147237 19.415211015596864, -103.51914774157491 19.410353950336088, -103.5323656676003 19.400315555739237, -103.53871713854757 19.407034872295192, -103.52661501147237 19.415211015596864</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_caseta_sayula" model="gps_geofences"> 
+            <field name="name">Caseta Sayula</field>
+            <field name="description">Caseta Sayula</field>
+            <field name="area">-103.52566808858788 19.927501495370297, -103.53377908864891 19.92673492383323, -103.53506654897606 19.941863937583673, -103.5272559563247 19.94238838407407, -103.52566808858788 19.927501495370297</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+        <record id="geofences_caseta_acatlan" model="gps_geofences"> 
+            <field name="name">Caseta Acatlan</field>
+            <field name="description">Caseta Acatlan</field>
+            <field name="area">-103.57480056076156 20.378281622286934, -103.57441432266342 20.364240906508556, -103.57913501052963 20.36452253800463, -103.57913501052963 20.378965521364446, -103.57480056076156 20.378281622286934</field>
+            <field name="attributes"></field>
+            <field name="color">green</field>
+            <field  name="company_ids" eval="[(6,0,[
+                ref('instance_solesgps.company_cerfar'),
+                ref('instance_solesgps.company_mixteca'),
+                ref('instance_solesgps.company_uhcam'),
+                ref('instance_solesgps.company_uhcam_lucero'),
+                ref('base.main_company'),
+            ])]"/>
+        </record>
+
+
+    </data>    
+</odoo>

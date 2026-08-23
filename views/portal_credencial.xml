@@ -1,0 +1,41 @@
+<odoo>
+<template id="portal_credencial" name="Mi credencial">
+    <t t-call="portal.portal_layout">    
+        <div class="container">
+            <div class="card mx-auto" style="width:640px; height:496px; background-image:url('/instance_sindicato/static/description/company/fondo.png'); text-shadow: -1px #fff,">
+                <div style="position:absolute; left:10px; margin:15px;" >
+                    <img src="/instance_sindicato/static/description/company/logo.png" alt="Logo" style="width: 60px;"/>
+                </div>
+                <div style="position:absolute; right:25px;  margin:15px;">
+                    <img src="/instance_sindicato/static/description/company/logoIMSS.png" alt="Logo" style="width: 50px;"/>
+                </div>
+
+                <div style="position:absolute; left:0px; top:150px; width:320px;" class="text-center">
+                    <div style="" class="text-center">
+                        <img t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
+                            class="rounded-circle mb-3"
+                            style="width:150px;height:150px;object-fit:cover;"/>
+
+                        <div style="position:absolute; left:0px; top:238px; width:100%" class="text-center">
+                            <h4 style="color:#fff;">
+                                <t t-esc="partner.name"/>
+                            </h4>
+                        </div> 
+                        <div style="position:absolute; left:0px; top:283px; width:100%" class="text-center">
+                            <h4 style="color:#fff;">
+                                <t t-esc="partner.email"/>
+                            </h4>
+                        </div>                          
+                    </div>
+                </div>
+                <div style="position:absolute; right:0px; width:320px; top:180px;" class="text-center">
+                    <img t-att-src="'data:image/png;base64,%s' % qr_code"  style="width:240px;"/>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</template>
+</odoo>
+
+

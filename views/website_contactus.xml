@@ -1,0 +1,19 @@
+<odoo>
+    <template id="website_contactus" inherit_id="website.contactus" name="website_contactus" priority="20">
+        <xpath expr="//ul[hasclass('list-unstyled')]" position="replace">
+            <ul class="list-unstyled mb-0 pl-2">
+                <li>SolesGPS</li>
+                <li><i class="fa fa-map-marker fa-fw mr-2"/><span class="o_force_ltr">Priv Bugambilias 144</span></li>
+                <li><i class="fa fa-phone fa-fw mr-2"/><span class="o_force_ltr">+52 (312) 454 - 9998</span></li>
+                <li><i class="fa fa-1x fa-fw fa-envelope mr-2"/><span>contacto@solesgps.com</span></li>
+            </ul>
+        </xpath>
+    </template>
+</odoo>
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<odoo>
+<template id="portal_credencial" name="Mi credencial">
+
+    <t t-call="portal.portal_layout">
+
+        <div class="container">
+
+            <div class="card mx-auto" style="max-width:450px; background-image:url('/instance_sindicato/static/description/company/fondo.png'); text-shadow: -1px #fff,">
+                
+                <div style="position:absolute; left:0px; margin:15px;" >
+                    <img src="/instance_sindicato/static/description/company/logo.png" alt="Logo" style="max-width: 80px;"/>
+                </div>
+                <div style="position:absolute; right:0px;  margin:15px;">
+                    <img src="/instance_sindicato/static/description/company/logoIMSS.png" alt="Logo" style="max-width: 75px;"/>
+                </div>
+
+                <div style="" class="text-center">
+
+                    <img t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
+                         class="rounded-circle mb-3"
+                         style="width:150px;height:150px;object-fit:cover;"/>
+                    <h3>
+                        <t t-esc="partner.name"/>
+                    </h3>
+                    <p>
+                    
+                        <t t-esc="partner.email"/><br/>
+                        <img t-att-src="'data:image/png;base64,%s' % qr_code"  style="margin:10px; width:130px;height:130px;"/>
+                    </p>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </t>
+
+</template>
+</odoo>
+
+

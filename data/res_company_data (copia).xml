@@ -1,0 +1,235 @@
+<odoo>
+
+
+        <record id="base.main_company" model="res.company">
+            <field name="name">SolesGPS</field>
+            <field name="company_registry">Eduardo Vizcaino Granados</field>
+            <field name="vat">VIGE850830GKA</field>
+            <field name="website">http://www.solesgps.com</field>
+            <field name="phone">52 (312) 454 - 9998</field>
+            <field name="email">contacto@solesgps.com</field>
+            
+            <field name="street2">Jardines de Bugambilias</field>
+            <field name="zip">28978</field>
+            <field name="city">Villa de Alvarez</field>
+            <field name="state_id" ref="base.state_mx_col" />
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+            <field name="logo" type="base64" file="instance_solesgps/static/description/company/solesgps.png"/>            
+            <field name="logo_web" type="base64" file="instance_solesgps/static/description/company/solesgps.png"/>            
+            <!--
+
+            <field name="logo" type="base64" file="l10n_ar_website_sale/static/description/icon.png"/>
+            <field name="l10n_mx_edi_fiscal_regime">601</field>
+            -->
+        </record>
+
+        <record id="company_developer" model="res.company">
+            <field name="name">Developer</field>
+            <field name="company_registry">Eduardo Vizcaino Granados</field>
+            <field name="vat">VIGE850830GKA</field>
+            <field name="website">http://www.solesgps.com</field>
+            <field name="phone">52 (312) 454 - 9998</field>
+            <field name="email">contacto@solesgps.com</field>        
+            <field name="street2">Jardines de Bugambilias</field>
+            <field name="zip">28978</field>
+            <field name="city">Villa de Alvarez</field>
+            <field name="state_id" ref="base.state_mx_col" />
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+
+        <record id="company_michoacana" model="res.company">
+            <field name="name">La Michoacana</field>        
+            <field name="company_registry">Edgar Roel Valencia Diaz</field>
+            <field name="vat">VADE780703EC1</field>
+            <field name="phone">52 (331) 517 - 8658</field>
+            <field name="email">colimalamichoacana15@gmail.com</field>
+            <field name="zip">44730</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+            <!--
+                Personas Físicas con Actividades Empresariales y Profesionales
+                2 unidades    
+            -->
+            
+        </record>
+
+        <record id="company_mixteca" model="res.company">
+            <field name="name">La Mixteca</field>
+            <field name="company_registry">Oscar Ricardo Vazquez Avila</field>
+            <field name="vat">VAAO831213UI9</field>
+            <field name="phone">52 (314) 120 - 9984</field>
+            <field name="email">lamixtecafacturacion@gmail.com</field>
+            <field name="zip">28876</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+            <!--
+                regimen simplificado de confianza
+                2 unidades    
+            -->
+            <field name="logo" type="base64" file="instance_solesgps/static/description/company/mixteca.jpeg"/>            
+            <field name="logo_web" type="base64" file="instance_solesgps/static/description/company/mixteca.jpeg"/>            
+
+        </record>
+<!--
+        <record id="company_mixteca_catalina" model="res.company">
+            <field name="name">La Mixteca Catalina</field>
+            <field name="company_registry">CATALINA GONZALEZ ZAMORA</field>
+            <field name="vat">GOZC5902207P7</field>
+            <field name="phone">52 (314) 120 - 9984</field>
+            <field name="email">lamixtecafacturacion@gmail.com</field>
+            <field name="zip">28860</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+                regimen simplificado de confianza
+                1 unidades    
+        </record>
+
+        <record id="company_mixteca_jesus" model="res.company">
+            <field name="name">La Mixteca Jesus</field>
+            <field name="company_registry">JESUS MANCILLA VARGAS</field>
+            <field name="vat">MAVJ670718KZ7</field>
+            <field name="phone">52 (314) 120 - 9984</field>
+            <field name="email">lamixtecafacturacion@gmail.com</field>
+            <field name="zip">28750</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+                regimen simplificado de confianza
+                1 unidades    
+   
+        </record>
+        <record id="company_proguz" model="res.company">
+            <field name="name">Proveedora Organica de Guzman</field>
+            <field name="company_registry">PROVEEDORA ORGANICA DE GUZMAN S.A. DE C.V.</field>
+            <field name="vat">POG140729C47</field>
+            <field name="phone">52 (341) 110 - 0179</field>
+            <field name="email"></field>
+            <field name="zip">49000</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+        <record id="company_agrosanmarcos" model="res.company">
+            <field name="name">AGRO INSUMOS SAN MARCOS</field>
+            <field name="company_registry">AGRO INSUMOS SAN MARCOS S.A. DE C.V.</field>
+            <field name="vat">AIS190617NG2</field>
+            <field name="phone">52 (321) 688 - 0021</field>
+            <field name="email">sanmarcos_autlan19@hotmail.com</field>
+            <field name="zip">48740</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+                General de Ley Personas Morales
+                1 unidades
+        </record>
+
+        <record id="company_rogelio" model="res.company">
+            <field name="name">Taxi rogelio</field>
+            <field name="company_registry"></field>
+            <field name="vat"></field>
+            <field name="phone">52 (312) 318 - 0113</field>
+            <field name="email">roboba@gmail.com</field>
+            <field name="zip"></field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+
+        <record id="company_tdiaz" model="res.company">
+            <field name="name">Transportes Diaz</field>
+            <field name="company_registry">Cesar Daniel Diaz Barba</field>
+            <field name="vat">DIBC850309N83</field>
+            <field name="phone">52 (332) 681 - 1037</field>
+            <field name="email">danieldiaz_facturacion@hotmail.com</field>
+            <field name="zip">45560</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+-->
+        <record id="company_tsamudio" model="res.company">
+            <field name="name">Transportes Samudio</field>
+            <field name="company_registry">Juan Manuel Samudio Tellez</field>
+            <field name="vat">SATJ670627HIA</field>
+            <field name="phone">52 (341) 413 - 7444</field>
+            <field name="email">transportes_samudio@hotmail.com</field>
+            <field name="zip">49093</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+<!--
+        <record id="company_tsandoval" model="res.company">
+            <field name="name">Transportes Sandoval</field>
+            <field name="company_registry">Juan Manuel Sandoval Magallon</field>
+            <field name="vat">SAMJ700707EPA</field>
+            <field name="phone">52 (314) 146 - 3974</field>
+            <field name="email">jsandovalmagallon@gmail.com</field>
+            <field name="zip">59040</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+-->
+        <record id="company_uhcam" model="res.company">
+            <field name="name">UHCAM</field>
+            <field name="company_registry">ANDRES CISNEROS ESCALERA</field>
+            <field name="vat">CIEA570101SP4</field>
+            <field name="phone">52 (314) 133 - 8086</field>
+            <field name="email">jeremy_1186@hotmail.com</field>
+            <field name="zip">60982</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+            <!--
+                Régimen de las Personas Físicas con Actividades Empresariales y Profesionales
+                3 unidades    
+            -->
+            <field name="logo" type="base64" file="instance_solesgps/static/description/company/uhcam.jpg"/>            
+            <field name="logo_web" type="base64" file="instance_solesgps/static/description/company/uhcam.jpg"/>            
+
+        </record>
+
+        <record id="company_cerfar" model="res.company">
+            <field name="name">Transportes CERFAR</field>
+            <field name="company_registry">JESUS GUSTAVO CERVANTES FARIAS</field>
+            <field name="vat">CEFJ861114NL2</field>
+            <field name="phone">52 (314) 133 - 8086</field>
+            <field name="email">jeremy_1186@hotmail.com</field>
+            <field name="zip">28800</field>
+            <field name="country_id" ref="base.mx"/>
+            <field name="currency_id" ref="base.MXN" />
+            <!--
+                regimen simplificado de confianza
+                5 unidades + 4 UHCAM   
+            -->        
+            <field name="logo" type="base64" file="instance_solesgps/static/description/company/cerfar.jpeg"/>            
+            <field name="logo_web" type="base64" file="instance_solesgps/static/description/company/cerfar.jpeg"/>            
+
+        </record>
+
+        <record id="company_uhcam_lucero" model="res.company">
+            <field name="name">LE Servicios Especializados</field>
+            <field name="company_registry">LUCERO ISABEL CISNEROS LEMUS</field>
+            <field name="vat">CILL900530MC5</field>
+            <field name="phone">52 (753) 103 - 1887</field>
+            <field name="email">lucerocl_0412@live.com</field>
+            <field name="zip">60950</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+            <!--
+                Personas Físicas con Actividades Empresariales y Profesionales                               
+                3 unidades    
+            -->   
+            
+        </record>
+<!--
+        <record id="company_tbucio" model="res.company">
+            <field name="name">Transportes Bucio</field>
+            <field name="company_registry">Luis Bucio Fernandez</field>
+            <field name="vat">BUFL601221HN4</field>
+            <field name="phone">52 (312) 100 - 3216</field>
+            <field name="email">lbufer@hotmail.com</field>
+            <field name="zip">28984</field>
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
+        </record>
+-->
+
+
+
+</odoo>

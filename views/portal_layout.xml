@@ -1,0 +1,36 @@
+<odoo>
+
+    <template id="portal_layout_inherit" inherit_id="portal.portal_layout">
+
+
+        <!--
+        <t t-call="portal.portal_breadcrumbs"/>
+        <xpath expr="//div[contains(@class,'o_portal_wrap')]" position="inside">
+        
+        
+        <xpath expr="//t[@t-call='portal.portal_breadcrumbs']" position="before">
+        -->
+
+        <xpath expr="//t[@t-call='portal.portal_breadcrumbs']" position="after">
+
+
+                        <a class="nav-link px-0" href="/my/eventos">
+                            <i class="fa fa-calendar me-2"/>
+                            Eventos
+                        </a>
+                        <a class="nav-link px-0" href="/my/credencial">
+                            <i class="fa fa-id-card me-2"/>
+                            Mi credencial
+                        </a>
+                        <a class="nav-link px-0" href="/my/documentos">
+                            <i class="fa fa-file-text me-2"/>
+                            Documentos
+                        </a>
+
+
+
+
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,69 @@
+<odoo>
+
+    <template id="website_aboutus" name="About Us">
+        <t t-call="website.layout">
+            <span class="hidden" data-for="contactus_form" t-att-data-values="contactus_form_values"/>
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24" data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1">
+                    <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_banner_default_image'); background-position: 50% 0;"/>
+                    <div class="o_we_bg_filter bg-black-50"/>
+                    <div class="container">
+                        <h1>About us</h1>
+                    </div>
+                </section>
+                <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-8 mt-4 mt-lg-0">
+                                <p>
+                                    At SolesGPS, we understand the importance of vehicle safety and protection. 
+                                    That's why we offer comprehensive solutions that include the installation of 
+                                    state-of-the-art tracking devices, advanced monitoring software, 
+                                    and reliable support services. 
+                                </p>
+                                <p>                                    
+                                    We are committed to ensuring that our customers get accurate, 
+                                    real-time information about the location and status of their vehicles at all times.
+                                </p>
+                                <p>
+                                    Our team of highly trained and dedicated professionals is ready to provide 
+                                    you with the best advice and personalized attention. 
+                                    We work closely with our clients to understand their specific needs 
+                                    and offer solutions tailored to their requirements. 
+                                </p>
+                                <p>                                    
+                                    We pride ourselves on building strong, long-lasting relationships with our clients, 
+                                    based on trust, transparency, and exceptional service.
+                                    We are passionate about helping our clients achieve their goals and improve the 
+                                    efficiency of their operations. 
+                                </p>
+                                <p>
+
+                                    If you are looking for a reliable and effective vehicle tracking solution, 
+                                    you are in the right place. Contact us today and let us show you how 
+                                    we can help you protect and optimize your vehicles! 
+                                </p>
+                            </div>
+                            <div class="col-lg-4 mt-4 mt-lg-0">
+                                <ul class="list-unstyled mb-0 pl-2">
+                                    <li>SolesGPS</li>
+                                    <li><i class="fa fa-map-marker fa-fw mr-2"/><span class="o_force_ltr">Priv Bugambilias 144</span></li>
+                                    <li><i class="fa fa-phone fa-fw mr-2"/><span class="o_force_ltr">+52 (312) 454 - 9998</span></li>
+                                    <li><i class="fa fa-1x fa-fw fa-envelope mr-2"/><span>contacto@solesgps.com</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+</odoo>
+
+
+
+
+
+
+

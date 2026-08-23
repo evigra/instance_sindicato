@@ -1,0 +1,51 @@
+<odoo>
+
+    <template id="footer_custom_instance" inherit_id="website.footer_custom" name="footer_custom_instance" priority="20">
+        <xpath expr="//a[@href='mailto:info@yourcompany.example.com']" position="replace">
+            <a href="mailto:contacto@solesgps.com">contacto@solesgps.com</a>
+        </xpath>
+        <xpath expr="//a[@href='tel:+1 (650) 555-0111']" position="replace">
+            <a href="tel:+52 (312) 454 - 9998">+52 (312) 454 - 9998</a>
+        </xpath>        
+        <xpath expr="//a[@href='/website/social/twitter']" position="attributes">
+            <attribute name="hidden">True</attribute>
+        </xpath>                
+        <xpath expr="//a[@href='/website/social/linkedin']" position="attributes">
+            <attribute name="hidden">True</attribute>
+        </xpath>                
+        <xpath expr="//a[@href='/website/social/facebook']" position="attributes">
+            <attribute name="href">https://www.facebook.com/solucionsatelital</attribute>
+        </xpath>                
+
+
+        <xpath expr="//div[@id='footer']//ul" position="replace">
+            <ul class="list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li><a href="aboutus">About us</a></li>
+                <li><a href="/web/login">Login</a></li>
+                <t t-set="configurator_footer_links" t-value="[]"/>
+                <li t-foreach="configurator_footer_links" t-as="link">
+                    <a t-att-href="link['href']" t-esc="link['text']"/>
+                </li>
+                <li><a href="/contactus">Contact us</a></li>
+            </ul>
+        </xpath>        
+
+
+    </template>
+
+    <template id="footer_copyright_company_name" inherit_id="website.layout">
+        <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name mr-2">Copyright &amp;copy; SolesGPS</span>
+        </xpath>
+    </template>
+
+
+</odoo>
+
+
+
+
+
+
+

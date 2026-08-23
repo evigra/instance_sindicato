@@ -1,0 +1,153 @@
+<odoo>
+    <!--<data noupdate="0">-->
+    <data>
+<!--
+      <record id="vehicle_tsand_01" model="fleet.vehicle">
+          <field name="license_plate">17-AH-8Z</field>
+          <field name="economic_number">TSAND 01</field>
+          <field name="model_id" ref="fleet.model_astra"/>
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="company_id" ref="base.main_company"/>
+          <field name="gps1_id" ref="gps_sandoval01"/>
+
+          <field name="manager_id" ref="instance_solesgps.user_cerfar_paola"/>
+      </record>
+-->
+
+      <record id="vehicle_uhcam_01" model="fleet.vehicle">
+          <field name="license_plate">34-AV-4C</field>
+          <field name="economic_number">CERFAR 001</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <!--
+          <field name="manager_id" ref="instance_solesgps.user_cerfar"/>
+          -->
+          <field name="vin_sn">3AKJAHBD91DH88264</field>
+          <field name="model_year">2001</field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_uhcam01"/>
+          <field name="speed">120</field>
+          <field name="color_vehicle">#ffffff</field>
+          <field name="customer_id" ref="partner_cerfar"/>
+      </record>
+      <record id="vehicle_uhcam_02" model="fleet.vehicle">
+          <field name="license_plate">03-AZ-2G</field>
+          <field name="economic_number">CERFAR 002</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="vin_sn">463546</field>
+          <field name="model_year">1989</field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_uhcam02"/>
+          <field name="speed">120</field>
+          <field name="color_vehicle">#ffa500</field>
+          <field name="image_vehicle">backhoe</field>
+          <field name="customer_id" ref="partner_cerfar"/>
+      </record>
+      <record id="vehicle_uhcam_03" model="fleet.vehicle">
+          <field name="license_plate">11-AM-3T</field>
+          <field name="economic_number">CERFAR 003</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="vin_sn">1XKAD49X9AJ262857</field>
+          <field name="model_year">2010</field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_uhcam03"/>
+          <field name="speed">120</field>
+          <field name="customer_id" ref="partner_cerfar"/>
+      </record>
+      <!--
+      <record id="vehicle_uhcam_04" model="fleet.vehicle">
+          <field name="license_plate">Desc</field>
+          <field name="economic_number">CERFAR 004</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_kenworth"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="manager_id" ref="instance_solesgps.user_cerfar"/>
+          <field name="gps1_id" ref="gps_uhcam04"/>
+          <field name="speed">120</field>
+      </record>
+      -->
+      <record id="vehicle_uhcam_05" model="fleet.vehicle">
+          <field name="license_plate">Desc</field>
+          <field name="economic_number">CERFAR 005</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="vin_sn">1NKDD39X0EJ410272</field>
+          <field name="model_year">2014</field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_uhcam05"/>
+          <field name="speed">120</field>
+          <field name="customer_id" ref="partner_cerfar"/>
+      </record>
+
+      <record id="vehicle_uhcam_06" model="fleet.vehicle">
+          <field name="license_plate">94-BE-6W</field>
+          <field name="economic_number">CERFAR 006</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="vin_sn">1NKDD39X0EJ410272</field>
+          <field name="model_year">2014</field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_uhcam06"/>
+          <field name="speed">120</field>
+          <field name="customer_id" ref="partner_cerfar"/>
+      </record>
+
+      <record id="vehicle_mini_01" model="fleet.vehicle">
+          <field name="license_plate">717AF9</field>
+          <field name="economic_number">MINI </field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="vin_sn">3C9KR2EN99A094402</field>
+          <field name="model_year"></field>
+          <field name="fuel_type">diesel</field>
+          <field name="gps1_id" ref="gps_movil_mini1"/>
+      </record>
+
+      <record id="vehicle_rogelio" model="fleet.vehicle">
+          <field name="license_plate">298-DVB</field>
+          <field name="economic_number">TAX ROG 01</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_kenworth"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="gps1_id" ref="gps_rogelio"/>
+          <field name="speed">120</field>
+          <field name="image_vehicle">vehicle</field>          
+          <field name="color_vehicle">#fff000</field>
+      </record>
+
+      <record id="vehicle_michoacana_01" model="fleet.vehicle">
+          <field name="license_plate">F8RR2</field>
+          <field name="economic_number">MICHOACANA 01</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="gps1_id" ref="gps_michoacana01"/>
+          <field name="speed">120</field>
+          <field name="image_vehicle">vehicle</field>
+          <field name="customer_id" ref="partner_michoacana"/>
+          
+      </record>
+      <record id="vehicle_michoacana_02" model="fleet.vehicle">
+          <field name="license_plate">ZLL3B</field>
+          <field name="economic_number">MICHOACANA 02</field>
+          <field name="model_id" ref="gpsmap.vehicle_model_volvo"/>        
+          <field name="state_id" ref="fleet.fleet_vehicle_state_registered"/>
+          <field name="odometer_unit">kilometers</field>
+          <field name="gps1_id" ref="gps_michoacana02"/>
+          <field name="speed">120</field>
+          <field name="image_vehicle">vehicle</field>
+          <field name="customer_id" ref="partner_michoacana"/>
+          
+      </record>
+
+    </data>
+</odoo>

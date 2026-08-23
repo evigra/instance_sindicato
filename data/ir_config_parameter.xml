@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gpsmap.google_map_api_key" model="ir.config_parameter"> 
+            <field name="value">AIzaSyCTDTeSJ3Uu3hHCy73RzGoJbx6vmKcmmUI</field>
+        </record>
+        <record id="gpsmap.google_map_mapid" model="ir.config_parameter"> 
+            <field name="value">845b0fe1a5feb50ec9109051</field>
+        </record>
+
+        <record id="gpsmap.gpsmap_host" model="ir.config_parameter"> 
+            <field name="value">http://51.222.206.247:8082</field>
+        </record>
+        <record id="gpsmap.gpsmap_user" model="ir.config_parameter"> 
+            <field name="value">admin</field>
+        </record>
+        <record id="gpsmap.gpsmap_pass" model="ir.config_parameter"> 
+            <field name="value">EvG30AvI03</field>
+        </record>
+
+
+        <record id="gpsmap.sync_devices" model="ir.config_parameter">
+            <field name="key">gpsmap.sync_devices</field>
+            <field name="value" eval="True"/>
+             
+            <field name="value"></field>
+            
+        </record>
+
+
+
+        <record id="report_url" model="ir.config_parameter"> 
+            <field name="key">report.url</field>
+            <field name="value">http://www.solesgps.com:8069</field>
+        </record>        
+
+
+        <!--
+        <record id="taecel.taecel_key" model="ir.config_parameter"> 
+            <field name="key">taecel.KEY</field>
+            <field name="value">TfSz5aizCq2UGoJsvJ67yzK2i40ef46eecabb1a474ce17a78d1452ad8GeurDQlTJUYTdywDArkZaMvUSCssnv</field>
+        </record>
+        <record id="taecel.taecel_nip" model="ir.config_parameter"> 
+            <field name="key">taecel.NIP</field>
+            <field name="value">0cfdb481030a069185ccc9aa84a29c29L3Jfvn5QgO</field>
+        </record>
+        <record id="taecel.taecel_url" model="ir.config_parameter"> 
+            <field name="key">taecel.URL</field>
+            <field name="value">https://taecel.com/app/api/</field>
+        </record> 
+        -->
+    </data>
+</odoo>

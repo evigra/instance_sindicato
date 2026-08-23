@@ -1,0 +1,31 @@
+<odoo>
+    <record id='asistencias_view_form' model='ir.ui.view'>
+        <field name="name">asistencias.form</field>
+        <field name="model">asistencias</field>
+        <field name="arch" type="xml">
+            <form string="Evento">
+                <field name="partner_id"/>
+                <field name="evento_id" /> 
+                <field name="fecha"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_termino"/>
+            </form>
+        </field>
+    </record>
+
+    <record id='asistencias_view_tree' model='ir.ui.view'>
+        <field name="name">asistencias.tree</field>
+        <field name="model">asistencias</field>
+        <field name="arch" type="xml">
+            <list string="Models">
+                <field name="partner_id"/>
+                <field name="evento_id" /> 
+                <field name="fecha"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_termino"/>
+            </list>
+
+        </field>
+    </record>
+
+</odoo>

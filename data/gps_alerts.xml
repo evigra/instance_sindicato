@@ -1,0 +1,178 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="alerts_uhcam_gustado" model="gps_alerts">
+            <field name="name">UHCAM Gustavo y Puerto</field>
+            <field name="send_mail" eval="True"/>
+            <field name="company_id" ref="company_cerfar" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_01'),
+                ref('vehicle_uhcam_02'),
+                ref('vehicle_uhcam_03'),
+                ref('vehicle_uhcam_04'),
+                ref('vehicle_uhcam_05')
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_manzanillo'),
+                ref('geofences_uhcam')
+            ])]"/>
+        </record>
+        <record id="alerts_uhcam_gustado_1" model="gps_alerts">
+            <field name="name">UHCAM Gustavo y Puerto</field>
+            <field name="send_mail" eval="False"/>
+            <field name="company_id" ref="company_cerfar" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_01'),
+                ref('vehicle_uhcam_02'),
+                ref('vehicle_uhcam_03'),
+                ref('vehicle_uhcam_04'),
+                ref('vehicle_uhcam_05')
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_mzo_ocupa'),
+                ref('geofences_pto_mzo_multimodal'),
+                ref('geofences_pto_mzo_timsa'),
+                ref('geofences_pto_mzo_junta'),
+            ])]"/>
+        </record>
+
+        <record id="alerts_uhcam" model="gps_alerts">
+            <field name="name">UHCAM y Puerto</field>
+            <field name="send_mail" eval="True"/>
+            <field name="company_id" ref="company_uhcam" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_62'),
+                ref('vehicle_uhcam_64'),
+                ref('vehicle_uhcam_65'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_manzanillo'),
+                ref('geofences_uhcam'),
+                ref('geofences_uhcam_lucero')
+            ])]"/>
+        </record>
+        <record id="alerts_uhcam_1" model="gps_alerts">
+            <field name="name">UHCAM y Puerto</field>
+            <field name="send_mail" eval="False"/>
+            <field name="company_id" ref="company_uhcam" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_62'),
+                ref('vehicle_uhcam_64'),
+                ref('vehicle_uhcam_65'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_mzo_ocupa'),
+                ref('geofences_pto_mzo_multimodal'),
+                ref('geofences_pto_mzo_timsa'),
+                ref('geofences_pto_mzo_junta'),
+            ])]"/>
+        </record>
+
+        <record id="alerts_uhcam_lucero" model="gps_alerts">
+            <field name="name">UHCAM lucero y Puerto</field>
+            <field name="send_mail" eval="True"/>
+            <field name="company_id" ref="company_uhcam_lucero" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_393'),
+                ref('vehicle_uhcam_412'),
+                ref('vehicle_uhcam_419'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_manzanillo'),
+                ref('geofences_uhcam'),
+                ref('geofences_uhcam_lucero')
+            ])]"/>
+        </record>
+        <record id="alerts_uhcam_lucero_1" model="gps_alerts">
+            <field name="name">UHCAM lucero y Puerto</field>
+            <field name="send_mail" eval="False"/>
+            <field name="company_id" ref="company_uhcam_lucero" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_uhcam_393'),
+                ref('vehicle_uhcam_412'),
+                ref('vehicle_uhcam_419'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_mzo_ocupa'),
+                ref('geofences_pto_mzo_multimodal'),
+                ref('geofences_pto_mzo_timsa'),
+                ref('geofences_pto_mzo_junta'),
+            ])]"/>
+        </record>
+
+        <record id="alerts_mixteca" model="gps_alerts">
+            <field name="name">Mixteca y Puerto</field>
+            <field name="send_mail" eval="True"/>
+            <field name="company_id" ref="company_mixteca" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_misteca01'),
+                ref('vehicle_misteca03'),
+                ref('vehicle_misteca05'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_manzanillo'),
+                ref('geofences_mixteca')
+            ])]"/>
+        </record>
+        <record id="alerts_mixteca_1" model="gps_alerts">
+            <field name="name">Mixteca y Puerto</field>
+            <field name="send_mail" eval="False"/>
+            <field name="company_id" ref="company_mixteca" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_misteca01'),
+                ref('vehicle_misteca03'),
+                ref('vehicle_misteca05'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_mzo_ocupa'),
+                ref('geofences_pto_mzo_multimodal'),
+                ref('geofences_pto_mzo_timsa'),
+                ref('geofences_pto_mzo_junta'),
+            ])]"/>
+        </record>
+
+        <record id="alerts_michoacana" model="gps_alerts">
+            <field name="name">Michoacana </field>
+            <field name="send_mail" eval="False"/>
+            <field name="company_id" ref="company_michoacana" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_michoacana_01'),
+                ref('vehicle_michoacana_02'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_michoacana_matriz'),
+                ref('geofences_michoacana_pinosuarez'),
+                ref('geofences_michoacana_benitojuarez'),
+            ])]"/>
+        </record>
+
+        <record id="alerts_soles" model="gps_alerts">
+            <field name="name">SolesGPS y Puerto </field>
+            <field name="description">webmaster@solesgps.com</field>
+            <field name="company_id" ref="base.main_company" />    
+
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('vehicle_michoacana_01'),
+                ref('vehicle_michoacana_02'),
+            ])]"/>            
+            <field  name="geofence_ids" eval="[(6,0,[
+                ref('geofences_pto_manzanillo'),
+                ref('geofences_pto_mzo_ocupa'),
+                ref('geofences_pto_mzo_multimodal'),
+                ref('geofences_pto_mzo_timsa'),
+                ref('geofences_pto_mzo_junta'),
+            ])]"/>
+        </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,177 @@
+<odoo>
+
+    <record id="website.default_website" model="website">
+        <field name="name">SolesGPS</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="logo" type="base64" file="instance_solesgps/static/description/logo.png"/>
+        <!--
+        <field name="domain" model="ir.config_parameter" eval="obj().env['ir.config_parameter'].sudo().get_param('web.base.url')"/>
+        <field  name="languages_ids" eval="[(6,0,[
+            ref('base.lang_es'),
+        ])]"/>
+        -->
+        <field name="domain" model="ir.config_parameter" eval="obj().env['ir.config_parameter'].sudo().get_param('web.base.url')"/>
+
+    </record>
+
+    <template id="website_homepage" inherit_id="website.homepage" name="website_homepage" priority="20">
+        
+        <xpath expr="t" position="replace">
+            <t t-call="website.layout">
+                <t t-set="pageName" t-value="'homepage'"/>
+    
+                <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+                    <div class="s_carousel s_carousel_default carousel slide" data-interval="5000" id="myCarousel1685986705557" style="background-image: none;">
+                        <ol class="carousel-indicators o_we_no_overlay">
+                            <li data-slide-to="0" class="active" data-target="#myCarousel1685986705557"/>
+                            <li data-slide-to="1" data-target="#myCarousel1685986705557"/>
+                            <li data-slide-to="2" data-target="#myCarousel1685986705557"/>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item pt152 pb152 oe_img_bg o_bg_img_center o_colored_level active" style="background-image: url(&quot;/web/image/instance_solesgps.banner-tractocamines1&quot;);" data-name="Slide">
+                                <div class="container oe_unremovable">
+                                    <div class="row content">                                      
+                                        <div class="carousel-content col-lg-6 o_colored_level  bg-black-50">
+                                            <h3><font style="font-size: 62px;" class="o_default_snippet_text">Mirror Account</font></h3>
+                                            <p class="lead o_default_snippet_text">Share the location to the owner of the merchandise.</p>                                        
+                                            <!--
+                                            <p><a href="/contactus" class="btn btn-primary mb-2 o_default_snippet_text">Contact us</a></p>  
+                                            -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item pt152 pb152 oe_img_bg o_bg_img_center o_colored_level " style="background-image: url(&quot;/web/image/instance_solesgps.banner-tractocamines2&quot;);" data-name="Slide">
+                                <div class="container oe_unremovable">
+                                    <div class="row content">
+                                        <div class="carousel-content col-lg-6 o_colored_level bg-black-50">
+                                            <h3><font style="font-size: 62px;" class="o_default_snippet_text">Access controls</font></h3>
+                                            <p class="lead o_default_snippet_text">Manage the entry and exit of your vehicles.</p>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item pt152 pb152 oe_img_bg o_bg_img_center o_colored_level " style="background-image: url(&quot;/web/image/instance_solesgps.banner-tractocamines3&quot;);" data-name="Slide">
+                                <div class="container oe_unremovable">
+                                    <div class="row content">
+                                        <div class="carousel-content col-lg-6 o_colored_level bg-black-50">
+                                            <h3><font style="font-size: 62px;" class="o_default_snippet_text">Locate your vehicles</font></h3>
+                                            <p class="lead o_default_snippet_text">Locate them and watch their journey every minute with our platform.</p>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-slide="prev" role="img" aria-label="Previous" title="Previous" href="#myCarousel1685986705557">
+                                <span class="carousel-control-prev-icon"/>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </a>
+                            <a class="carousel-control-next o_not_editable o_we_no_overlay" data-slide="next" role="img" aria-label="Next" title="Next" href="#myCarousel1685986705557">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </a>
+                        </div>
+                    </div>    
+                </section>
+
+
+                <section class="s_showcase pt48 pb48 o_colored_level o_we_force_no_transition" data-vcss="002" data-snippet="s_showcase" data-name="Showcase" style="background-image: none;" data-original-title="" title="" aria-describedby="tooltip866838">
+                    <div class="container">
+                    <div class="row no-gutters s_col_no_resize s_col_no_bgcolor s_nb_column_fixed">
+                        <div class="col-lg text-lg-right">
+                        <div class="row">
+                            <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                                    <i class="s_showcase_icon fa fa-2x fa-key text-secondary mr-3 mr-lg-0 ml-lg-3"/>
+                                    <h3 class="o_default_snippet_text">Engine stop</h3>
+                                </div>
+                                <p class="o_default_snippet_text">Perform engine stop, any day, at any time.</p>
+                            </div>
+                            <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                <div class="s_showcase_title d-flex flex-lg-row-reverse mb-2">
+                                    <i class="s_showcase_icon fa fa-2x fa-edit text-secondary mr-3 mr-lg-0 ml-lg-3"/>
+                                    <h3 class="o_default_snippet_text">Areas of interest</h3>
+                                </div>
+                                <p class="o_default_snippet_text">Create your areas of importance and classify them by color.</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-1">
+                        <div class="w-50 h-100 border-right"/>
+                        </div>
+                        <div class="col-lg">
+                        <div class="row">
+                            <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                            <div class="s_showcase_title d-flex mb-2">
+                                    <i class="s_showcase_icon fa fa-2x fa-road text-secondary mr-3"/>
+                                    <h3 class="o_default_snippet_text">Geolocate assets</h3>
+                                </div>
+                                <p class="o_default_snippet_text">Track your assets that are updated every minute.</p>
+                            </div>
+                            <div class="col-lg-12 pt24 pb24 o_colored_level" data-name="Block">
+                                <div class="s_showcase_title d-flex mb-2">
+                                    <i class="s_showcase_icon fa fa-2x fa-bullhorn text-secondary mr-3"/>
+                                    <h3 class="o_default_snippet_text">Alerts</h3>
+                                </div>
+                                <p class="o_default_snippet_text">Receive alerts for speeding, geofences, etc.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+
+
+
+                <section class="s_three_columns o_cc o_cc2 pt64 pb64 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
+                    <div class="container">
+                    <div class="row d-flex align-items-stretch">
+                        <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card bg-white h-100" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px !important;">
+                            <img class="card-img-top" src="/web/image/instance_solesgps.columns-characteristics1" alt="" loading="lazy" data-original-id="405" data-original-src="/theme_zap/static/src/img/content/three_columns_01.jpg" data-mimetype="image/jpeg"/>
+                            <div class="card-body">
+                                <h3 class="card-title o_default_snippet_text">Street View</h3>
+                                <p class="card-text o_default_snippet_text">You will have a street or driver view, so you can have a better perspective of your location.</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card bg-white h-100" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px !important;">
+                            <img class="card-img-top" src="/web/image/instance_solesgps.columns-characteristics2" alt="" loading="lazy" data-original-id="406" data-original-src="/theme_zap/static/src/img/content/three_columns_02.jpg" data-mimetype="image/jpeg"/>
+                            <div class="card-body">
+                                <h3 class="card-title o_default_snippet_text">Smart Report</h3>
+                                <p class="card-text o_default_snippet_text">You will have access to smart reports, machine hours, daily km, etc, to make the right decisions at the right times.</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card bg-white h-100" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px !important;">
+                            <img class="card-img-top" src="/web/image/instance_solesgps.columns-characteristics3" alt="" loading="lazy" data-original-id="407" data-original-src="/theme_zap/static/src/img/content/three_columns_03.jpg" data-mimetype="image/jpeg"/>
+                            <div class="card-body">
+                                <h3 class="card-title o_default_snippet_text">History Map</h3>
+                                <p class="card-text o_default_snippet_text">They will have a history and a simulation of the route carried out, to detail the movements carried out previously.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+
+
+
+            </t>
+        </xpath>
+        
+    </template>
+
+
+</odoo>
+
+
+
+
+
+
+

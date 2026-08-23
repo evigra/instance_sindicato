@@ -1,0 +1,9 @@
+<odoo>
+    
+        <record id="eventos01" model="eventos"> 
+            <field name="name">POSADA</field>
+        </record>
+        <record id="eventos02" model="eventos"> 
+            <field name="name">NAVIDAD</field>
+        </record>
+</odoo>

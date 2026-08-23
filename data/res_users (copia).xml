@@ -1,0 +1,136 @@
+<odoo>
+    <data noupdate="0">
+        <record id="base.user_admin" model="res.users">
+            <field name="name">Administrator</field>
+            <field name="login">webmaster@solesgps.com</field>
+            <field name="password">admin</field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="base.main_company" />    
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[
+                ref('base.main_company'),
+                ref('company_developer'),
+                ref('company_michoacana'),                
+                ref('company_mixteca'),       
+                ref('company_tsamudio'),
+                ref('company_uhcam'),
+                ref('company_cerfar'),
+                ref('company_uhcam_lucero')
+            ])]"/>
+            <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+
+        </record>
+
+        <record id="user_evigra" model="res.users">
+            <field name="name">EDUARDO VIZCAINO GRANADOS</field>
+            <field name="login">e.vizcaino@solesgps.com</field>
+            <field name="password"> </field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="base.main_company" />    
+            <field name="partner_id" ref="instance_solesgps.partner_soles_evigra" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[
+                ref('base.main_company'),
+                ref('company_developer'),
+                ref('company_michoacana'),                
+                ref('company_mixteca'),
+                ref('company_tsamudio'),
+                ref('company_uhcam'),
+                ref('company_cerfar'),
+                ref('company_uhcam_lucero')
+            ])]"/>
+            <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+        </record>
+
+
+        <record id="user_valenzuela" model="res.users">
+            <field name="name">LUIS VALENZUELA</field>
+            <field name="login">valenzuela.1995@hotmail.com</field>        
+            <field name="password">aervalenzuela7293e65</field>
+            <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user'))]" />
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="base.main_company" />            
+            <field name="partner_id" ref="instance_solesgps.partner_valenzuela" />            
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+        </record>
+
+
+
+        <record id="user_michoacana" model="res.users">
+            <field name="name">Cremeria la Michoacana</field>
+            <field name="login">cremerialamichoacana15@gmail.com</field>        
+            <field name="password">lamichoacana2018</field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="company_michoacana" />
+            <field name="partner_id" ref="instance_solesgps.partner_michoacana" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('company_michoacana')])]"/>
+            <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+        </record>
+
+<!--
+        <record id="user_tdiaz" model="res.users">
+            <field name="name">Cesar Daniel Diaz Barba</field>
+            <field name="login">danieldiaz_facturacion@hotmail.com</field>        
+            <field name="password"> </field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="company_tdiaz" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('company_tdiaz')])]"/>
+        </record>
+-->
+        <record id="user_cerfar" model="res.users">
+            <field name="name">JESUS GUSTAVO CERVANTES FARIAS</field>
+            <field name="login">jeremy_1186@hotmail.com</field>        
+            <field name="password">gustavo123</field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="company_cerfar" />
+            <field name="partner_id" ref="instance_solesgps.partner_cerfar_gustavo" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('company_uhcam'),ref('company_cerfar'),ref('company_uhcam_lucero')])]"/>
+        </record>
+
+        <record id="user_cerfar_paola" model="res.users">
+            <field name="name">PAOLA INFANTE</field>
+            <field name="login">operaciones@transmilenials.com</field>        
+            <field name="password">Transmilens515</field>
+            <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user'))]" />
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="company_cerfar" />
+            <field name="partner_id" ref="instance_solesgps.partner_cerfar_paola" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('company_cerfar')])]"/>
+        </record>
+
+
+        <record id="user_rogelio" model="res.users">
+            <field name="name">TAXI ROGELIO</field>
+            <field name="login">roboba@gmail.com</field>        
+            <field name="password">saturn84</field>
+            <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user'))]" />
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="partner_id" ref="instance_solesgps.partner_taxi_rogelio" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('base.main_company')])]"/>
+        </record>
+
+
+<!--
+        <record id="user_tsandoval" model="res.users">
+            <field name="name">Sandoval Magallon</field>
+            <field name="login">jsandovalmagallon@gmail.com</field>        
+            <field name="password"> </field>
+            <field name="tz">America/Mexico_City</field>
+            <field name="company_id" ref="company_tsandoval" />
+            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
+            <field  name="company_ids" eval="[(6,0,[ref('company_tsandoval')])]"/>
+        </record>
+-->
+
+    </data>        
+ 
+
+
+</odoo>

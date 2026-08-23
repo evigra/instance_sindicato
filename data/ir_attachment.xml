@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="banner-tractocamines1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">banner-tractocamines1.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/banner-tractocamines1.png</field>
+        </record>
+        <record id="banner-tractocamines2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">banner-tractocamines2.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/banner-tractocamines2.png</field>
+        </record>
+        <record id="banner-tractocamines3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">banner-tractocamines3.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/banner-tractocamines3.png</field>
+        </record>
+
+        <record id="columns-characteristics1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">columns-characteristics1.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/columns-characteristics1.png</field>
+        </record>
+        <record id="columns-characteristics2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">columns-characteristics2.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/columns-characteristics2.png</field>
+        </record>
+        <record id="columns-characteristics3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">columns-characteristics3.png</field>
+            <field name="type">url</field>
+            <field name="url">/instance_solesgps/static/src/img/columns-characteristics3.png</field>
+        </record>
+
+        
+
+
+    </data>
+</odoo>

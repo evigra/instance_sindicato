@@ -1,0 +1,40 @@
+<odoo>
+    <data noupdate="1">
+
+
+
+        <record id="mirror_uhcam_01" model="gps_mirror"> 
+            <field name="name">CERFAR 001</field>
+            <field name="start" eval="datetime.today()"/>
+            <field name="end" eval="datetime.today() + relativedelta(weeks=1)"/>
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('instance_solesgps.vehicle_uhcam_01')
+            ])]"/>
+        </record>
+        <record id="mirror_uhcam_02" model="gps_mirror"> 
+            <field name="name">CERFAR 002</field>
+            <field name="start" eval="datetime.today()"/>
+            <field name="end" eval="datetime.today() + relativedelta(weeks=1)"/>
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('instance_solesgps.vehicle_uhcam_02')
+            ])]"/>
+        </record>
+        <record id="mirror_uhcam_03" model="gps_mirror"> 
+            <field name="name">CERFAR 003</field>
+            <field name="start" eval="datetime.today()"/>
+            <field name="end" eval="datetime.today() + relativedelta(weeks=1)"/>
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('instance_solesgps.vehicle_uhcam_03')
+            ])]"/>
+        </record>
+        <record id="mirror_uhcam_05" model="gps_mirror"> 
+            <field name="name">CERFAR 005</field>
+            <field name="start" eval="datetime.today()"/>
+            <field name="end" eval="datetime.today() + relativedelta(weeks=1)"/>
+            <field  name="vehicle_ids" eval="[(6,0,[
+                ref('instance_solesgps.vehicle_uhcam_05')
+            ])]"/>
+        </record>
+
+    </data>    
+</odoo>

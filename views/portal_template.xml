@@ -1,0 +1,23 @@
+<odoo>
+
+    <template
+        id="portal_my_home_menu_eventos"
+        inherit_id="portal.portal_my_home"
+    >
+        <xpath expr="//div[contains(@class,'o_portal_docs')]" position="inside">
+            
+            <a href="/my/eventos"
+               class="list-group-item list-group-item-action">
+                Eventos
+            </a>
+            <a href="/my/credencial"
+               class="list-group-item list-group-item-action">
+                Mi credencial
+            </a>
+            <a href="/my/perfil"
+               class="list-group-item list-group-item-action">
+                Mi perfil
+            </a>
+        </xpath>
+    </template>
+</odoo>
