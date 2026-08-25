@@ -30,10 +30,27 @@
         </field>
     </record>
 
+    <record id='plantilla_model_action' model='ir.actions.act_window'>
+        <field name="name">Plantilla</field>
+        <field name="res_model">plantilla</field>
+        <field name="view_mode">list,form</field>
+        
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Crea un nuevo evento
+          </p>
+          <p>
+            Tu podras definir el tipo de evento (Reunion Sindical, Evento, Encuesta)
+            
+          </p>
+        </field>
+    </record>
+
+
     <menuitem name="Eventos" id="menu_eventos_root" sequence="220" groups="instance_sindicato.eventos_group_user"/>
     <menuitem name="Evento"        action="eventos_model_action"       parent="menu_eventos_root" id="opcion_evento" sequence="100" groups="instance_sindicato.eventos_group_user"/>
     <menuitem name="Asistencia"    action="asistencias_model_action"   parent="menu_eventos_root" id="opcion_asistencia" sequence="100" groups="instance_sindicato.eventos_group_user"/>
-
+    <menuitem name="Plantilla"    action="plantilla_model_action"   parent="menu_eventos_root" id="opcion_plantilla" sequence="100" groups="instance_sindicato.eventos_group_manager"/>
     
 <!--
 

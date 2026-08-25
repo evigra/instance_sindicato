@@ -1,0 +1,23 @@
+<odoo>
+
+    <record id="view_partner_form_documents" model="ir.ui.view">
+        <field name="name">res.partner.form.documents</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Documentos">
+                    <group>
+                        <field name="ine_file" filename="ine_filename"/>
+                        <field name="ine_filename" invisible="1"/>
+
+                        <field name="tarjeton_file" filename="tarjeton_filename"/>
+                        <field name="tarjeton_filename" invisible="1"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

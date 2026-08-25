@@ -6,3 +6,5 @@
 from . import eventos
 from . import asistencias
 from . import familia
+from . import res_partner
+from . import plantilla

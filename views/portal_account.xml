@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+        id="portal_my_details_documents"
+        inherit_id="portal.portal_my_details"
+    >
+
+        <!-- Permitir archivos -->
+        <xpath expr="//form" position="attributes">
+            <attribute name="enctype">
+                multipart/form-data
+            </attribute>
+        </xpath>
+
+
+        <!-- Agregar documentos -->
+        <xpath expr="//form" position="inside">
+
+            <div class="row mt-4">
+
+                <div class="col-12">
+                    <h4>Documentos</h4>
+                    <hr/>
+                </div>
+
+
+                <!-- INE -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label
+                        for="ine_file"
+                        class="form-label"
+                    >
+                        INE
+                    </label>
+
+                    <input
+                        type="file"
+                        name="ine_file"
+                        id="ine_file"
+                        class="form-control"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                    />
+
+                    <small
+                        t-if="partner.ine_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        INE cargada
+                    </small>
+
+                </div>
+
+
+                <!-- TARJETÓN -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label
+                        for="tarjeton_file"
+                        class="form-label"
+                    >
+                        Tarjetón
+                    </label>
+
+                    <input
+                        type="file"
+                        name="tarjeton_file"
+                        id="tarjeton_file"
+                        class="form-control"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                    />
+
+                    <small
+                        t-if="partner.tarjeton_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        Tarjetón cargado
+                    </small>
+
+                </div>
+
+            </div>
+
+        </xpath>
+
+    </template>
+
+</odoo>

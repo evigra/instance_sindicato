@@ -2,11 +2,19 @@
 
 
         <record id="base.main_company" model="res.company">
-            <field name="name">Sindicato</field>
+            <field name="name">Seccion XXV</field>
+            <field name="phone">312-312-4033</field>
+            <field name="zip">28046</field>
+            <field name="street">Oscar Enrique Morentin Guedea</field>
+            <field name="street2">Av. Niños Héroes #660</field>
+
+            <field name="city">Colima</field>
+            <field name="state_id" ref="base.state_mx_col" />
+            <field name="country_id" ref="base.mx" />
+            <field name="currency_id" ref="base.MXN" />
 
             <field name="logo" type="base64" file="instance_sindicato/static/description/company/logo.png"/>            
             <field name="logo_web" type="base64" file="instance_sindicato/static/description/company/logo.png"/>            
-
             
             <!--
             <field name="company_registry">Eduardo Vizcaino Granados</field>
@@ -14,7 +22,7 @@
             <field name="website">http://www.solesgps.com</field>
             <field name="phone">52 (314) 352 - 0972</field>
             <field name="email">contacto@solesgps.com</field>
-            
+            <field name="street2">1ro de Mayo # 406</field>            
             <field name="street2">1ro de Mayo # 406</field>
             <field name="zip">28040</field>
             <field name="city">Colima</field>

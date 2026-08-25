@@ -18,7 +18,7 @@ class asistencias(models.Model):
     partner_id = fields.Many2one('res.partner', string='Usuario', required=True)
     evento_id = fields.Many2one('eventos', string='Evento', required=True)
 
-    fecha = fields.Datetime(string='Solicitado',  tracking=True, default=lambda self: fields.Datetime.now())
+    fecha = fields.Datetime(string='Solicitado', default=lambda self: fields.Datetime.now())
     fecha_inicio = fields.Datetime(string='Llegada')
     fecha_termino = fields.Datetime(string='Salida')
 

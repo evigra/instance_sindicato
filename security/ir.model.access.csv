@@ -3,3 +3,5 @@ access_eventos_user,access_eventos,model_eventos,eventos_group_user,1,0,0,0
 access_eventos,access_eventos,model_eventos,eventos_group_manager,1,1,1,1
 access_asistencias_user,access_asistencias,model_asistencias,eventos_group_user,1,0,0,0
 access_asistencias,access_asistencias,model_asistencias,eventos_group_manager,1,1,1,1
+access_plantilla_user,access_plantilla,model_plantilla,eventos_group_user,1,0,0,0
+access_plantilla,access_plantilla,model_plantilla,eventos_group_manager,1,1,1,1

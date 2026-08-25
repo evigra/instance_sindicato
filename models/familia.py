@@ -16,8 +16,8 @@ class familia(models.Model):
     #_order="fecha DESC"
 
 
-    name = fields.Char('Nombre', size = 75 , required=True,  tracking=True,)
-    nacimiento = fields.Datetime(string='Fecha de nacimiento', required=True, tracking=True,default=lambda self: fields.Datetime.now() + timedelta(days=3))
+    name = fields.Char('Nombre', size = 75 , required=True)
+    nacimiento = fields.Datetime(string='Fecha de nacimiento', required=True)
     parentesco = fields.Selection([('Hijos', 'hijos'), ('Padres', 'padres')], copy=False)
     
     archivo = fields.Binary(

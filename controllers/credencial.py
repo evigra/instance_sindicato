@@ -18,6 +18,7 @@ class CredencialPortal(CustomerPortal):
     )
     def portal_credencial(self, **kw):
         partner = request.env.user.partner_id
+        company = request.env.company
         
 
         url = request.httprequest.host_url.rstrip(
@@ -42,10 +43,13 @@ class CredencialPortal(CustomerPortal):
             buffer.getvalue()
         ).decode()
 
+
         return request.render(
             'instance_sindicato.portal_credencial',
             {
                 'partner': partner,
                 'qr_code': qr_base64,
+                'company': company,
+
             }
         )
