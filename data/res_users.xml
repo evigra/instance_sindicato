@@ -6,106 +6,20 @@
     <data>
   
         <record id="base.user_admin" model="res.users">
-            <field name="name">Administrator</field>
-            <field name="login">webmaster@solesgps.com</field>
+            <field name="name">Admin Eduardo Vizcaino</field>
+            <field name="login">admin</field>
             <field name="password">admin</field>
 
             <field name="lang">es_MX</field>
-
             <field name="tz">America/Mexico_City</field>
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
             
-            <field name="customer_ids" eval="[(6,0,[
-                ref('partner_michoacana'),
-                ref('partner_cerfar'),
-                ref('partner_unico')
-            ])]"/>
-
-        </record>
-
-        <record id="user_evigra" model="res.users">
-            <field name="name">EDUARDO VIZCAINO GRANADOS</field>
-            <field name="login">e.vizcaino@solesgps.com</field>
-            <field name="password"> </field>
-            <field name="tz">America/Mexico_City</field>
-            <field name="partner_id" ref="instance_solesgps.partner_soles_evigra" />
+            <!--
+            
+            <field name="groups_id" eval="[(4, ref('eventos_group_manager'))]"/>
+            
             <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-            <field name="customer_ids" eval="[(6,0,[
-                
-                ref('partner_michoacana')
-            ])]"/>
-
+            -->
         </record>
-
-        <record id="user_michoacana" model="res.users">
-            <field name="name">Cremeria la Michoacana</field>
-            <field name="login">cremerialamichoacana15@gmail.com</field>        
-            <field name="password">lamichoacana2018</field>
-            <field name="tz">America/Mexico_City</field>
-            <field name="partner_id" ref="instance_solesgps.partner_michoacana" />
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-            <field name="customer_ids" eval="[(6,0,[
-                ref('partner_michoacana')
-            ])]"/>
-
-        </record>
-
-        <record id="user_cerfar" model="res.users">
-            <field name="name">JESUS GUSTAVO CERVANTES FARIAS</field>
-            <field name="login">jeremy_1186@hotmail.com</field>        
-            <field name="password">gustavo123</field>
-            <field name="tz">America/Mexico_City</field>
-            <field name="partner_id" ref="instance_solesgps.partner_cerfar_gustavo" />
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-
-            <field name="customer_ids" eval="[(6,0,[
-                ref('partner_cerfar')
-            ])]"/>
-
-
-        </record>
-
-        <record id="user_cerfar_paola" model="res.users">
-            <field name="name">PAOLA INFANTE</field>
-            <field name="login">operaciones@transmilenials.com</field>        
-            <field name="password">Transmilens515</field>
-            <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user'))]" />
-            <field name="tz">America/Mexico_City</field>
-            <field name="partner_id" ref="instance_solesgps.partner_cerfar_paola" />
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-            <field name="customer_ids" eval="[(6,0,[
-                ref('partner_cerfar')
-            ])]"/>
-
-        </record>
-
-        <record id="user_rogelio" model="res.users">
-            <field name="name">TAXI ROGELIO</field>
-            <field name="login">roboba@gmail.com</field>        
-            <field name="password">saturn84</field>
-            <field name="groups_id" eval="[(4, ref('fleet.fleet_group_user'))]" />
-            <field name="tz">America/Mexico_City</field>
-            <field name="partner_id" ref="instance_solesgps.partner_taxi_rogelio" />
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-            <field name="customer_ids" eval="[(6,0,[
-                ref('partner_unico')
-            ])]"/>
-
-        </record>
-
-
-    <!--
-
-        <record id="user_tsandoval" model="res.users">
-            <field name="name">Sandoval Magallon</field>
-            <field name="login">jsandovalmagallon@gmail.com</field>        
-            <field name="password"> </field>
-            <field name="tz">America/Mexico_City</field>
-            <field name="company_id" ref="company_tsandoval" />
-            <field name="action_id" ref="gpsmap.action_gpsmap_maponline" />
-            <field  name="company_ids" eval="[(6,0,[ref('company_tsandoval')])]"/>
-        </record>
--->
 
     </data>        
  
