@@ -34,7 +34,8 @@ Main Features
         'contacts',
         #'gpsmap',        
     ],
-    "pre_init_hook": "pre_load_hook",
+    
+    #"pre_init_hook": "pre_load_hook",
     "post_init_hook": "post_load_hook",
     'data': [
         #'data/ir_config_parameter.xml',

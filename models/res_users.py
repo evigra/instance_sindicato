@@ -4,6 +4,8 @@ from odoo import models, fields
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    matricula = fields.Binary(string='INE',attachment=True)
+
     ine_file = fields.Binary(string='INE',attachment=True)
     ine_filename = fields.Char(string='Nombre archivo INE')
 

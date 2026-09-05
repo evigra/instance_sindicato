@@ -8,3 +8,6 @@ class ResPartner(models.Model):
 
     tarjeton_file = fields.Binary(string='Tarjetón', attachment=True)
     tarjeton_filename = fields.Char(string='Nombre archivo Tarjetón')
+
+
+    
