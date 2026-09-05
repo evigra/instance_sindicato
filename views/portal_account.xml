@@ -1,91 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- ========================================================= -->
+    <!-- OCULTAR CAMPOS ESTÁNDAR DE ODOO                         -->
+    <!-- ========================================================= -->
+
     <template
-        id="portal_my_details_documents"
-        inherit_id="portal.portal_my_details"
+        id="portal_my_details_fields_custom"
+        inherit_id="portal.portal_my_details_fields"
+        name="Portal - Ocultar campos"
     >
 
-        <!-- Permitir archivos -->
-        <xpath expr="//form" position="attributes">
-            <attribute name="enctype">
-                multipart/form-data
-            </attribute>
-        </xpath>
+        <!-- Company Name -->
+        <xpath expr="//input[@name='company_name']/.." position="replace"/>
+
+        <!-- VAT Number -->
+        <xpath expr="//input[@name='vat']/.." position="replace"/>
+
+        <!-- Street 2 -->
+        <xpath expr="//input[@name='street2']/.." position="replace"/>
+
+        <!-- State / Province -->
+        <xpath expr="//select[@name='state_id']/.." position="replace"/>
+
+        <!-- Zip / Postal Code -->
+        <xpath expr="//input[@name='zipcode']/.." position="replace"/>
+
+    </template>
 
 
-        <!-- Agregar documentos -->
-        <xpath expr="//form" position="inside">
+    <!-- ========================================================= -->
+    <!-- FOTO Y DOCUMENTOS                                        -->
+    <!-- ========================================================= -->
+<template
+    id="portal_my_details_documents"
+    inherit_id="portal.portal_my_details"
+    name="Portal - Foto y Documentos"
+>
 
-            <div class="row mt-4">
+    <!-- ========================================================= -->
+    <!-- FORMULARIO                                                -->
+    <!-- ========================================================= -->
 
-                <div class="col-12">
-                    <h4>Documentos</h4>
-                    <hr/>
-                </div>
+    <xpath expr="//form" position="attributes">
+        <attribute name="enctype">multipart/form-data</attribute>
+    </xpath>
 
 
-                <!-- INE -->
-                <div class="col-12 col-md-6 mb-3">
+    <!-- ========================================================= -->
+    <!-- FOTO Y DOCUMENTOS                                         -->
+    <!-- SE INSERTAN ANTES DE LOS BOTONES                         -->
+    <!-- ========================================================= -->
 
-                    <label
-                        for="ine_file"
-                        class="form-label"
-                    >
-                        INE
-                    </label>
+    <xpath expr="//div[hasclass('clearfix') and hasclass('text-end') and hasclass('mb-5')]" position="before">
 
-                    <input
-                        type="file"
-                        name="ine_file"
-                        id="ine_file"
-                        class="form-control"
-                        accept=".pdf,.jpg,.jpeg,.png"
+        <!-- ===================================================== -->
+        <!-- FOTO                                                   -->
+        <!-- ===================================================== -->
+
+        <div class="row mt-4">
+
+            <div class="col-12">
+                <h4>Fotografía</h4>
+                <hr/>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+
+                <div class="text-center">
+
+                    <img
+                        t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
+                        class="rounded-circle border"
+                        style="width:140px;height:140px;object-fit:cover;"
                     />
-
-                    <small
-                        t-if="partner.ine_file"
-                        class="text-success d-block mt-2"
-                    >
-                        <i class="fa fa-check-circle"/>
-                        INE cargada
-                    </small>
-
-                </div>
-
-
-                <!-- TARJETÓN -->
-                <div class="col-12 col-md-6 mb-3">
-
-                    <label
-                        for="tarjeton_file"
-                        class="form-label"
-                    >
-                        Tarjetón
-                    </label>
-
-                    <input
-                        type="file"
-                        name="tarjeton_file"
-                        id="tarjeton_file"
-                        class="form-control"
-                        accept=".pdf,.jpg,.jpeg,.png"
-                    />
-
-                    <small
-                        t-if="partner.tarjeton_file"
-                        class="text-success d-block mt-2"
-                    >
-                        <i class="fa fa-check-circle"/>
-                        Tarjetón cargado
-                    </small>
 
                 </div>
 
             </div>
 
-        </xpath>
+            <div class="col-12 col-md-8 mb-3">
 
-    </template>
+                <label
+                    for="image_1920"
+                    class="form-label"
+                >
+                    Cambiar fotografía
+                </label>
+
+                <input
+                    type="file"
+                    name="image_1920"
+                    id="image_1920"
+                    class="form-control"
+                    accept=".jpg,.jpeg,.png,.webp"
+                />
+
+                <small
+                    t-if="partner.image_1920"
+                    class="text-success d-block mt-2"
+                >
+                    <i class="fa fa-check-circle"/>
+                    Fotografía cargada
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================================== -->
+        <!-- DOCUMENTOS                                             -->
+        <!-- ===================================================== -->
+
+        <div class="row mt-4">
+
+            <div class="col-12">
+                <h4>Documentos</h4>
+                <hr/>
+            </div>
+
+
+            <!-- INE -->
+
+            <div class="col-12 col-md-6 mb-3">
+
+                <label
+                    for="ine_file"
+                    class="form-label"
+                >
+                    INE
+                </label>
+
+                <input
+                    type="file"
+                    name="ine_file"
+                    id="ine_file"
+                    class="form-control"
+                    accept=".jpg,.jpeg,.png"
+                />
+
+                <small
+                    t-if="partner.ine_file"
+                    class="text-success d-block mt-2"
+                >
+                    <i class="fa fa-check-circle"/>
+                    INE cargada
+                </small>
+
+            </div>
+
+
+            <!-- TARJETÓN -->
+
+            <div class="col-12 col-md-6 mb-3">
+
+                <label
+                    for="tarjeton_file"
+                    class="form-label"
+                >
+                    Tarjetón
+                </label>
+
+                <input
+                    type="file"
+                    name="tarjeton_file"
+                    id="tarjeton_file"
+                    class="form-control"
+                    accept=".jpg,.jpeg,.png"
+                />
+
+                <small
+                    t-if="partner.tarjeton_file"
+                    class="text-success d-block mt-2"
+                >
+                    <i class="fa fa-check-circle"/>
+                    Tarjetón cargado
+                </small>
+
+            </div>
+
+        </div>
+
+    </xpath>
+
+</template>
 
 </odoo>

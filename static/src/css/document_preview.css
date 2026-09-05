@@ -1,0 +1,85 @@
+.o_document_preview img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.o_document_preview img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Fondo */
+.o_document_image_overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* Contenedor */
+.o_document_image_container {
+    position: relative;
+
+    max-width: 95vw;
+    max-height: 95vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Imagen grande */
+.o_document_image_large {
+    max-width: 90vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    background: white;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Botón cerrar */
+.o_document_image_close {
+    position: absolute;
+
+    top: -15px;
+    right: -15px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    color: black;
+
+    font-size: 30px;
+    line-height: 35px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.o_document_image_close:hover {
+    background: #ddd;
+}

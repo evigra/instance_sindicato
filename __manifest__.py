@@ -72,7 +72,10 @@ Main Features
         #'views/website_footer_custom.xml',
         #'views/homepage.xml',
     ],
-
+    'web.assets_backend': [
+        #'instance_sindicato/static/src/js/document_preview.js',
+        #'instance_sindicato/static/src/css/document_preview.css',
+    ],
     'installable': True,
     'application': True,
 }
