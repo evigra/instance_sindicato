@@ -2,29 +2,76 @@
 <odoo>
 
     <!-- ========================================================= -->
-    <!-- OCULTAR CAMPOS ESTÁNDAR DE ODOO                         -->
+    <!-- CAMPOS PERSONALIZADOS DEL PORTAL                         -->
     <!-- ========================================================= -->
 
     <template
         id="portal_my_details_fields_custom"
         inherit_id="portal.portal_my_details_fields"
-        name="Portal - Ocultar campos"
+        name="Portal - Campos personalizados"
     >
 
+        <!-- ===================================================== -->
+        <!-- MATRÍCULA ANTES DE NOMBRE                             -->
+        <!-- ===================================================== -->
+
+        <xpath expr="//input[@name='name']/.." position="before">
+
+            <div t-attf-class="mb-3 col-xl-6">
+
+                <label
+                    class="col-form-label"
+                    for="matricula"
+                >
+                    Matrícula
+                </label>
+
+                <input
+                    type="text"
+                    name="matricula"
+                    id="matricula"
+                    class="form-control"
+                    t-att-value="partner.matricula or ''"
+                />
+
+            </div>
+
+        </xpath>
+
+
+        <!-- ===================================================== -->
+        <!-- OCULTAR CAMPOS ESTÁNDAR                               -->
+        <!-- ===================================================== -->
+
         <!-- Company Name -->
-        <xpath expr="//input[@name='company_name']/.." position="replace"/>
+        <xpath
+            expr="//input[@name='company_name']/.."
+            position="replace"
+        />
 
         <!-- VAT Number -->
-        <xpath expr="//input[@name='vat']/.." position="replace"/>
+        <xpath
+            expr="//input[@name='vat']/.."
+            position="replace"
+        />
 
         <!-- Street 2 -->
-        <xpath expr="//input[@name='street2']/.." position="replace"/>
+        <xpath
+            expr="//input[@name='street2']/.."
+            position="replace"
+        />
 
         <!-- State / Province -->
-        <xpath expr="//select[@name='state_id']/.." position="replace"/>
+        <xpath
+            expr="//select[@name='state_id']/.."
+            position="replace"
+        />
 
         <!-- Zip / Postal Code -->
-        <xpath expr="//input[@name='zipcode']/.." position="replace"/>
+        <xpath
+            expr="//input[@name='zipcode']/.."
+            position="replace"
+        />
 
     </template>
 
@@ -32,158 +79,166 @@
     <!-- ========================================================= -->
     <!-- FOTO Y DOCUMENTOS                                        -->
     <!-- ========================================================= -->
-<template
-    id="portal_my_details_documents"
-    inherit_id="portal.portal_my_details"
-    name="Portal - Foto y Documentos"
->
 
-    <!-- ========================================================= -->
-    <!-- FORMULARIO                                                -->
-    <!-- ========================================================= -->
-
-    <xpath expr="//form" position="attributes">
-        <attribute name="enctype">multipart/form-data</attribute>
-    </xpath>
-
-
-    <!-- ========================================================= -->
-    <!-- FOTO Y DOCUMENTOS                                         -->
-    <!-- SE INSERTAN ANTES DE LOS BOTONES                         -->
-    <!-- ========================================================= -->
-
-    <xpath expr="//div[hasclass('clearfix') and hasclass('text-end') and hasclass('mb-5')]" position="before">
+    <template
+        id="portal_my_details_documents"
+        inherit_id="portal.portal_my_details"
+        name="Portal - Foto y Documentos"
+    >
 
         <!-- ===================================================== -->
-        <!-- FOTO                                                   -->
+        <!-- FORMULARIO MULTIPART                                 -->
         <!-- ===================================================== -->
 
-        <div class="row mt-4">
+        <xpath expr="//form" position="attributes">
+            <attribute name="enctype">multipart/form-data</attribute>
+        </xpath>
 
-            <div class="col-12">
-                <h4>Fotografía</h4>
-                <hr/>
-            </div>
 
-            <div class="col-12 col-md-4 mb-3">
+        <!-- ===================================================== -->
+        <!-- FOTO Y DOCUMENTOS ANTES DE LOS BOTONES               -->
+        <!-- ===================================================== -->
 
-                <div class="text-center">
+        <xpath
+            expr="//div[hasclass('clearfix') and hasclass('text-end') and hasclass('mb-5')]"
+            position="before"
+        >
 
-                    <img
-                        t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
-                        class="rounded-circle border"
-                        style="width:140px;height:140px;object-fit:cover;"
+            <!-- ================================================= -->
+            <!-- FOTO                                               -->
+            <!-- ================================================= -->
+
+            <div class="row mt-4">
+
+                <div class="col-12">
+                    <h4>Fotografía</h4>
+                    <hr/>
+                </div>
+
+                <div class="col-12 col-md-4 mb-3">
+
+                    <div class="text-center">
+
+                        <img
+                            t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
+                            class="rounded-circle border"
+                            style="width:140px;height:140px;object-fit:cover;"
+                        />
+
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-8 mb-3">
+
+                    <label
+                        for="image_1920"
+                        class="form-label"
+                    >
+                        Cambiar fotografía
+                    </label>
+
+                    <input
+                        type="file"
+                        name="image_1920"
+                        id="image_1920"
+                        class="form-control"
+                        accept=".jpg,.jpeg,.png,.webp"
                     />
+
+                    <small
+                        t-if="partner.image_1920"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        Fotografía cargada
+                    </small>
 
                 </div>
 
             </div>
 
-            <div class="col-12 col-md-8 mb-3">
 
-                <label
-                    for="image_1920"
-                    class="form-label"
-                >
-                    Cambiar fotografía
-                </label>
+            <!-- ================================================= -->
+            <!-- DOCUMENTOS                                         -->
+            <!-- ================================================= -->
 
-                <input
-                    type="file"
-                    name="image_1920"
-                    id="image_1920"
-                    class="form-control"
-                    accept=".jpg,.jpeg,.png,.webp"
-                />
+            <div class="row mt-4">
 
-                <small
-                    t-if="partner.image_1920"
-                    class="text-success d-block mt-2"
-                >
-                    <i class="fa fa-check-circle"/>
-                    Fotografía cargada
-                </small>
-
-            </div>
-
-        </div>
+                <div class="col-12">
+                    <h4>Documentos</h4>
+                    <hr/>
+                </div>
 
 
-        <!-- ===================================================== -->
-        <!-- DOCUMENTOS                                             -->
-        <!-- ===================================================== -->
+                <!-- ============================================= -->
+                <!-- INE                                             -->
+                <!-- ============================================= -->
 
-        <div class="row mt-4">
+                <div class="col-12 col-md-6 mb-3">
 
-            <div class="col-12">
-                <h4>Documentos</h4>
-                <hr/>
-            </div>
+                    <label
+                        for="ine_file"
+                        class="form-label"
+                    >
+                        INE
+                    </label>
 
+                    <input
+                        type="file"
+                        name="ine_file"
+                        id="ine_file"
+                        class="form-control"
+                        accept=".jpg,.jpeg,.png"
+                    />
 
-            <!-- INE -->
+                    <small
+                        t-if="partner.ine_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        INE cargada
+                    </small>
 
-            <div class="col-12 col-md-6 mb-3">
-
-                <label
-                    for="ine_file"
-                    class="form-label"
-                >
-                    INE
-                </label>
-
-                <input
-                    type="file"
-                    name="ine_file"
-                    id="ine_file"
-                    class="form-control"
-                    accept=".jpg,.jpeg,.png"
-                />
-
-                <small
-                    t-if="partner.ine_file"
-                    class="text-success d-block mt-2"
-                >
-                    <i class="fa fa-check-circle"/>
-                    INE cargada
-                </small>
-
-            </div>
+                </div>
 
 
-            <!-- TARJETÓN -->
+                <!-- ============================================= -->
+                <!-- TARJETÓN                                         -->
+                <!-- ============================================= -->
 
-            <div class="col-12 col-md-6 mb-3">
+                <div class="col-12 col-md-6 mb-3">
 
-                <label
-                    for="tarjeton_file"
-                    class="form-label"
-                >
-                    Tarjetón
-                </label>
+                    <label
+                        for="tarjeton_file"
+                        class="form-label"
+                    >
+                        Tarjetón
+                    </label>
 
-                <input
-                    type="file"
-                    name="tarjeton_file"
-                    id="tarjeton_file"
-                    class="form-control"
-                    accept=".jpg,.jpeg,.png"
-                />
+                    <input
+                        type="file"
+                        name="tarjeton_file"
+                        id="tarjeton_file"
+                        class="form-control"
+                        accept=".jpg,.jpeg,.png"
+                    />
 
-                <small
-                    t-if="partner.tarjeton_file"
-                    class="text-success d-block mt-2"
-                >
-                    <i class="fa fa-check-circle"/>
-                    Tarjetón cargado
-                </small>
+                    <small
+                        t-if="partner.tarjeton_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        Tarjetón cargado
+                    </small>
+
+                </div>
 
             </div>
 
-        </div>
+        </xpath>
 
-    </xpath>
-
-</template>
+    </template>
 
 </odoo>
+

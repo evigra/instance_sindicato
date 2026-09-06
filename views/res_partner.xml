@@ -1,44 +1,69 @@
 <odoo>
 
-<record id="view_partner_form_documents" model="ir.ui.view">
-    <field name="name">res.partner.form.documents</field>
-    <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.view_partner_form"/>
-    <field name="arch" type="xml">
+    <record id="view_partner_form_documents" model="ir.ui.view">
+        <field name="name">res.partner.form.documents</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
 
-        <xpath expr="//notebook" position="inside">
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
 
-            <page string="Documentos">
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
 
-                    <!-- INE -->
-                    <group string="INE">
-
-                        <field
-                            name="ine_file"
-                            widget="image"
-                            class="o_document_preview"
-                            options="{'preview_image': 'ine_file'}"
-                        />
-
-                    </group>
-                    <group string="Tarjetón">
-
-                        <field
-                            name="tarjeton_file"
-                            widget="image"
-                            class="o_document_preview"
-                            options="{'preview_image': 'tarjeton_file'}"
-                        />
-
-                    </group>
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
 
 
+            <xpath expr="//notebook" position="inside">
 
-            </page>
+                <page string="Documentos">
 
-        </xpath>
+                        <!-- INE -->
+                        <group>
 
-    </field>
-</record>
+                            <field
+                                name="ine_file"
+                                widget="image"
+                                class="o_document_preview"
+                                options="{'preview_image': 'ine_file'}"
+                            />
+
+                        </group>
+                        <group>
+
+                            <field
+                                name="tarjeton_file"
+                                widget="image"
+                                class="o_document_preview"
+                                options="{'preview_image': 'tarjeton_file'}"
+                            />
+
+                        </group>
+
+
+
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
 
 </odoo>
