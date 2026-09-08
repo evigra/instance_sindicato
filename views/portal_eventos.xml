@@ -158,6 +158,13 @@
                                 <t t-esc="evento.descripcion"/>
                             </p>
                             -->
+
+                            <a t-att-href="'/my/asistencias/%s' % evento.id"
+                            class="btn btn-secondary">
+                                Registrarme
+                            </a>
+
+
                             <a href="/my/eventos"
                             class="btn btn-secondary">
                                 Regresar a mis eventos
@@ -169,6 +176,50 @@
         </t>
 
     </template>
+
+
+    <template id="portal_evento_asistencia"
+              name="Detalle del Evento">
+
+        <t t-call="portal.portal_layout">
+
+            <t t-if="evento">
+
+                <t t-set="title">
+                    <t t-esc="evento.name"/>
+                </t>
+                <div class="container">
+                    <!--
+                    <t t-call="portal.portal_breadcrumbs"/>
+                    -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h2>
+                                <t t-esc="evento.name"/>
+                            </h2>
+                            <hr/>
+                            <p>
+                                <strong>Fecha de publicación:</strong>
+                                <t t-esc="evento.fecha_publicacion"/>
+                            </p>
+                            <p t-if="evento.fecha_termino">
+                                <strong>Fecha de término:</strong>
+                                <t t-esc="evento.fecha_termino"/>
+                            </p>
+
+
+                            <a href="/my/eventos"
+                            class="btn btn-secondary">
+                                Regresar a mis eventos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
 
 </odoo>
                 <!--

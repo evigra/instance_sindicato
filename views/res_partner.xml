@@ -6,10 +6,13 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
 
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="matricula" placeholder="Ej. 99064616"/>
+            </xpath>
             <xpath expr="//field[@name='company_type']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//field[@name='company_type']" position="attributes">
+            <xpath expr="//field[@name='parent_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
 
@@ -65,5 +68,26 @@
 
         </field>
     </record>
+
+
+
+    <record id="view_res_partner_filter_inherit_matricula" model="ir.ui.view">
+        <field name="name">res.partner.search.matricula</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="matricula"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+
+
+
 
 </odoo>

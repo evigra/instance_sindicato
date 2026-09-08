@@ -47,7 +47,6 @@ class PortalEventos(CustomerPortal):
     def portal_evento_detalle(self, evento_id, **kw):
 
         evento = request.env['eventos'].sudo().browse(evento_id)
-        #evento = request.env['eventos'].sudo().search([])
         if not evento.exists():
             return request.not_found()
 
@@ -57,8 +56,66 @@ class PortalEventos(CustomerPortal):
         }
 
         return request.render(
-            #'instance_sindicato.portal_eventos',
             'instance_sindicato.portal_evento_detalle',
             values
         )
+
+    @http.route(
+        '/my/asistencias/<int:evento_id>',
+        type='http',
+        auth='user',
+        website=True
+    )
+    def portal_asistencia(self, evento_id, **kw):
+
+        partner = request.env.user.partner_id
+        evento = request.env['eventos'].sudo().browse(evento_id)
+        if not evento.exists():
+            return request.not_found()
+
+        asistencia = request.env['asistencias'].sudo().search([
+            ('partner_id', '=', partner.id),
+            ('evento_id', '=', evento.id),
+        ], limit=1)
+
+        if not asistencia:
+            request.env['asistencias'].sudo().create({
+                'name': evento.name,
+                'partner_id': partner.id,
+                'evento_id': evento.id,
+            })
+
+
+        values = {
+            
+            'evento': evento,
+            'asistencia': asistencia,
+            'page_name': 'evento',
+        }
+
+
+        return request.render(
+            #'instance_sindicato.portal_eventos',
+            'instance_sindicato.portal_evento_asistencia',
+            values
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
