@@ -28,29 +28,20 @@ Main Features
 * Show all costs associated to a vehicle or to a type of service
 * Analysis graph for costs
 """,
-    'depends': [
-        'mail',
-        'portal',
-        'contacts',
-        #'gpsmap',        
-    ],
-    
+'depends': [
+    'mail',
+    'portal',
+    'contacts',
+    'auth_signup',
+],    
     #"pre_init_hook": "pre_load_hook",
     "post_init_hook": "post_load_hook",
+
     'data': [
-        #'data/ir_config_parameter.xml',
-        #'data/ir_attachment.xml',
-        
-        #'data/fetchmail_server.xml',
         'data/eventos.xml',
         'data/res_company_data.xml',
         'data/res_users.xml',
-        #'data/res_config_settings.xml',
-        #"data/lang.xml",
-        
-        #'data/res_partner.xml',
-        #'data/res_users.xml',
-        
+
         'security/security.xml',
         'security/ir.model.access.csv',
 
@@ -59,24 +50,25 @@ Main Features
         'views/plantilla.xml',
         'views/menuitem.xml',
         'views/res_partner.xml',
-        #'views/portal_menu_templates.xml',
-        
+
+        'views/signup.xml',
+
         'views/portal_credencial.xml',
         'views/portal_eventos.xml',
         #'views/portal_familia.xml',
         'views/portal_account.xml',
         'views/portal_children.xml',
-        #'views/views.xml',
-        #'views/website_aboutus.xml',
-        #'views/website_contactus_thanks.xml',
-        #'views/website_contactus.xml',
-        #'views/website_footer_custom.xml',
-        #'views/homepage.xml',
     ],
-    'web.assets_backend': [
-        #'instance_sindicato/static/src/js/document_preview.js',
-        #'instance_sindicato/static/src/css/document_preview.css',
-    ],
+
+
+
+
+    'assets': {
+        'web.assets_frontend': [
+            'instance_sindicato/static/src/js/signup_matricula.js',
+        ],
+    }, 
+
     'installable': True,
     'application': True,
 }

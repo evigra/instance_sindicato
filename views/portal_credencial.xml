@@ -24,7 +24,7 @@
                         </div> 
                         <div style="position:absolute; left:0px; top:180px; width:100%" class="text-center">
                             <h6 style="color:#aaa;">
-                                <t t-esc="partner.email"/>
+                                <t t-esc="partner.matricula"/>
                             </h6>
                         </div>                          
                     </div>

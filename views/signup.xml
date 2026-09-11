@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+        id="signup_matricula"
+        inherit_id="auth_signup.fields"
+        name="Signup - Matrícula"
+    >
+
+        <xpath
+            expr="//input[@name='login']/.."
+            position="before"
+        >
+
+            <div class="mb-3 field-matricula">
+
+                <label
+                    for="matricula"
+                    class="form-label"
+                >
+                    Matrícula
+                </label>
+
+                <input
+                    type="text"
+                    name="matricula"
+                    id="matricula"
+                    class="form-control"
+                    autocomplete="off"
+                    required="required"
+                    t-att-value="matricula or ''"
+                />
+
+                <div
+                    id="matricula_feedback"
+                    class="mt-2"
+                />
+
+            </div>
+
+        </xpath>
+
+    </template>
+
+</odoo>
