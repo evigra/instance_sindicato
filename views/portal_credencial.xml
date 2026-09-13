@@ -22,10 +22,16 @@
                                 <t t-esc="partner.name"/>
                             </h6>
                         </div> 
-                        <div style="position:absolute; left:0px; top:180px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
+                        <div style="position:absolute; left:0px; top:170px; width:100%" class="text-center">
+                            <h7 style="color:#aaa;">
+                                <t t-esc="partner.function"/>
+                            </h7>
+                        </div>                          
+
+                        <div style="position:absolute; left:0px; top:190px; width:100%" class="text-center">
+                            <h7 style="color:#aaa;">
                                 <t t-esc="partner.matricula"/>
-                            </h6>
+                            </h7>
                         </div>                          
                     </div>
                 </div>

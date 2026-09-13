@@ -35,7 +35,8 @@ Main Features
     'auth_signup',
 ],    
     #"pre_init_hook": "pre_load_hook",
-    "post_init_hook": "post_load_hook",
+    #"post_init_hook": "post_load_hook",
+    'post_init_hook': 'post_init_hook',
 
     'data': [
         'data/eventos.xml',

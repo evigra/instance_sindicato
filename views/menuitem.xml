@@ -1,4 +1,36 @@
 <odoo>
+    <record id="trabajador_res_partner_model_action" model="ir.actions.act_window">
+        <field name="name">Trabajadores</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('matricula', '!=', False)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="hijos_res_partner_model_action" model="ir.actions.act_window">
+        <field name="name">Hijos</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('parent_contact_id', '!=', False)]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="menu_sindicato_trabajadores"
+        name="Trabajadores"
+        parent="contacts.menu_contacts"
+        action="trabajador_res_partner_model_action"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_sindicato_hijos"
+        name="Hijos"
+        parent="contacts.menu_contacts"
+        action="hijos_res_partner_model_action"
+        sequence="30"
+    />            
+
     <record id='eventos_model_action' model='ir.actions.act_window'>
         <field name="name">Eventos</field>
         <field name="res_model">eventos</field>
@@ -50,8 +82,18 @@
     <menuitem name="Eventos" id="menu_eventos_root" sequence="220" groups="instance_sindicato.eventos_group_user"/>
     <menuitem name="Evento"        action="eventos_model_action"       parent="menu_eventos_root" id="opcion_evento" sequence="100" groups="instance_sindicato.eventos_group_user"/>
     <menuitem name="Asistencia"    action="asistencias_model_action"   parent="menu_eventos_root" id="opcion_asistencia" sequence="100" groups="instance_sindicato.eventos_group_user"/>
+    <!--
     <menuitem name="Plantilla"    action="plantilla_model_action"   parent="menu_eventos_root" id="opcion_plantilla" sequence="100" groups="instance_sindicato.eventos_group_manager"/>
-    
+    -->
+    <menuitem
+        id="menu_plantilla"
+        name="Plantillas"
+        parent="base.menu_users"
+        action="plantilla_model_action"
+        sequence="30"
+    />
+
+
 <!--
 
 

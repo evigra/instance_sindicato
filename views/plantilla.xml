@@ -1,5 +1,18 @@
 <odoo>
 
+    <record id="plantilla_view_search" model="ir.ui.view">
+        <field name="name">plantilla.search</field>
+        <field name="model">plantilla</field>
+        <field name="arch" type="xml">
+            <search string="Buscar">
+                <field name="nombre_del_ocupante"/>
+                <field name="matricula_ocupante"/>
+                <field name="nombre_del_titular"/>
+                <field name="titular_de_plz" />                
+            </search>
+        </field>
+    </record>
+
     <record id='plantilla_view_tree' model='ir.ui.view'>
         <field name="name">plantilla.tree</field>
         <field name="model">plantilla</field>
@@ -7,17 +20,18 @@
             <list string="Models">
                 <field name="name" />
                 <field name="matricula_ocupante"/>
+                <field name="nombre_del_ocupante"/>
+                <field name="titular_de_plz" />
+                <field name="nombre_del_titular" />
                 <field name="departamento"/>
                 <field name="adscripcion"/>
                 <field name="tipo_contratacion"/>
                 <field name="puesto" />
                 <field name="categoria" />
-                
                 <field name="clasificacion" />
                 <field name="especialidad" />
                 <field name="turno_descr" />
                 <field name="horario" />
-                <field name="nombre_del_titular" />
                 
             </list>
         </field>
@@ -35,28 +49,28 @@
                     <group col="1">
                         <group col="1">
                             <div class="oe_title" name="event_type_title">
-                                <label for="nombre_del_titular" string="Nombre"/>
-                                <h1><field name="nombre_del_titular" placeholder="p. ej. Reunion Sindical o Posada" /></h1>
+                                <label for="nombre_del_ocupante" string="Nombre"/>
+                                <h1><field name="nombre_del_ocupante" placeholder="p. ej. Trabajador Ocupante" /></h1>
                             </div>
                         </group>
 
                         <group col="2">
                             <group>
                     
-                <field name="matricula_ocupante"/>
-                <field name="departamento"/>
-                <field name="adscripcion"/>
-                <field name="tipo_contratacion"/>
-                <field name="puesto" />
-                <field name="categoria" />
+                                <field name="matricula_ocupante"/>
+                                <field name="departamento"/>
+                                <field name="adscripcion"/>
+                                <field name="tipo_contratacion"/>
+                                <field name="puesto" />
+                                <field name="categoria" />
                     
                             </group>    
                             <group>
 
-                <field name="clasificacion" />
-                <field name="especialidad" />
-                <field name="turno_descr" />
-                <field name="horario" />
+                                <field name="clasificacion" />
+                                <field name="especialidad" />
+                                <field name="turno_descr" />
+                                <field name="horario" />
                 
 
                             </group>

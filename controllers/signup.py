@@ -58,7 +58,7 @@ class SindicatoSignup(AuthSignupHome):
         return {
             'encontrado': True,
             'matricula': plantilla.matricula_ocupante or '',
-            'name': plantilla.nombre_del_titular or '',
+            'name': plantilla.nombre_del_ocupante or '',
             'function': plantilla.categoria or '',
         }
 
@@ -124,9 +124,9 @@ class SindicatoSignup(AuthSignupHome):
             # Datos provenientes de plantilla
             if plantilla:
 
-                if plantilla.nombre_del_titular:
+                if plantilla.nombre_del_ocupante:
                     values['name'] = (
-                        plantilla.nombre_del_titular
+                        plantilla.nombre_del_ocupante
                     )
 
                 if plantilla.categoria:
