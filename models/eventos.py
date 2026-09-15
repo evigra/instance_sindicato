@@ -34,6 +34,16 @@ class eventos(models.Model):
     asistencias_iniciadas = fields.Integer(string='Iniciadas', compute='_compute_asistencias', store=True)
     asistencias_pendientes = fields.Integer(string='Pendientes', compute='_compute_asistencias', store=True)
 
+    publicacion_file = fields.Binary(
+        string='INE',
+        attachment=True
+    )
+
+    publicacion_filename = fields.Char(
+        string='Nombre archivo INE'
+    )
+
+
     @api.depends(
         'asistencia_ids',
         'asistencia_ids.fecha_inicio'

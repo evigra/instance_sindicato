@@ -94,22 +94,15 @@
                                                 class="img-fluid rounded-circle"
                                                 style="width: 150px; height: 150px; object-fit: cover;"/>
 
-
-
                                         </t>
 
-
-
-
                                         <t t-else="">
-
                                             <div
                                                 class="rounded-circle bg-light border d-inline-flex align-items-center justify-content-center"
                                                 style="width: 140px; height: 140px;"
                                             >
                                                 <i class="fa fa-user fa-4x text-muted"/>
                                             </div>
-
                                         </t>
 
                                     </div>

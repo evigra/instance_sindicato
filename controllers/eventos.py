@@ -26,7 +26,8 @@ class PortalEventos(CustomerPortal):
             # para determinar qué eventos corresponden
             # al usuario.
         ])
-        
+
+
         values = {
             'eventos': eventos,
             'page_name': 'eventos',
@@ -49,6 +50,16 @@ class PortalEventos(CustomerPortal):
         evento = request.env['eventos'].sudo().browse(evento_id)
         if not evento.exists():
             return request.not_found()
+
+        print("====================================")
+        print("EVENTO ID:", evento.id)
+        print("NOMBRE:", evento.name)
+        print("PUBLICACION FILE:", bool(evento.publicacion_file))
+        print("PUBLICACION FILE LENGTH:", len(evento.publicacion_file or b''))
+        print("FILENAME:", evento.publicacion_filename)
+        print("====================================")
+
+
 
         values = {
             'evento': evento,

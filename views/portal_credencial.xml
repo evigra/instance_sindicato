@@ -13,6 +13,7 @@
                 -->
                 <div style="position:absolute; left:0px; top:140px; width:250px;" class="text-center">
                     <div style="" class="text-center">
+
                         <img t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
                             class="rounded-circle mb-3"
                             style="width:120px;height:120px;object-fit:cover;"/>

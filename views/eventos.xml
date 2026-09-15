@@ -42,6 +42,15 @@
                         </group>
                     </group>
                         <notebook>
+                            <page string="Publicacion" >
+                                <field
+                                    name="publicacion_file"
+                                    widget="image"
+                                    class="o_document_preview"
+                                    options="{'preview_image': 'publicacion_file'}"
+                                />
+                            </page>
+
                             <page string="Asistencia" >
                                 <field name="asistencia_ids">
                                     <list string="Models">

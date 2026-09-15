@@ -131,46 +131,25 @@
         <t t-call="portal.portal_layout">
 
             <t t-if="evento">
-
                 <t t-set="title">
                     <t t-esc="evento.name"/>
                 </t>
                 <div class="container">
-                    <!--
-                    <t t-call="portal.portal_breadcrumbs"/>
-                    -->
                     <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h2>
-                                <t t-esc="evento.name"/>
-                            </h2>
-                            <hr/>
-                            <p>
-                                <strong>Fecha de publicación:</strong>
-                                <t t-esc="evento.fecha_publicacion"/>
-                            </p>
-                            <p t-if="evento.fecha_termino">
-                                <strong>Fecha de término:</strong>
-                                <t t-esc="evento.fecha_termino"/>
-                            </p>
-                            <!--
-                            <p t-if="evento.descripcion">
-                                <t t-esc="evento.descripcion"/>
-                            </p>
-                            -->
+                            <t t-if="evento.publicacion_file">
+                                <img t-att-src="'/web/image/eventos/%s/publicacion_file' % evento.id" width="100%"/>
+                            </t>
 
-                            <a t-att-href="'/my/asistencias/%s' % evento.id"
-                            class="btn btn-secondary">
-                                Registrarme
-                            </a>
-
-
-                            <a href="/my/eventos"
-                            class="btn btn-secondary">
-                                Regresar a mis eventos
-                            </a>
-                        </div>
                     </div>
+                    <a t-att-href="'/my/asistencias/%s' % evento.id"
+                    class="btn btn-secondary">
+                        Registrarme
+                    </a>
+
+                    <a href="/my/eventos"
+                    class="btn btn-secondary">
+                        Regresar a mis eventos
+                    </a>
                 </div>
             </t>
         </t>
