@@ -35,7 +35,7 @@ class plantilla(models.Model):
     turno_descr = fields.Char(string='Turno Descr', size = 25 , tracking=True,)
     horario = fields.Char(string='Horario', size = 75 , tracking=True,)
     tipo_Plaza_Descripcion = fields.Char(string='Tipo Plaza Descripcion', size = 40 , tracking=True,)
-    titular_de_plz = fields.Char('Titular de plz', size = 75)
+    titular_de_plz = fields.Char('Titular de plz', size = 12)
     nombre_del_titular = fields.Char('Nombre del titular', size = 75)
     nombre_del_ocupante = fields.Char('Nombre del Ocupante', size = 75)
     #fecha_de_ocupacion = fields.Datetime(string='Fecha de ocupacion')
