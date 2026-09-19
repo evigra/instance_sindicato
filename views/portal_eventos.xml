@@ -141,7 +141,7 @@
                             </t>
 
                     </div>
-                    <a t-att-href="'/my/asistencias/%s' % evento.id"
+                    <a target="_new" t-att-href="'/my/asistencias/%s' % evento.id"
                     class="btn btn-secondary">
                         Registrarme
                     </a>
@@ -173,19 +173,19 @@
                     -->
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <h2>
+                            <h2> 
                                 <t t-esc="evento.name"/>
                             </h2>
                             <hr/>
                             <p>
-                                <strong>Fecha de publicación:</strong>
-                                <t t-esc="evento.fecha_publicacion"/>
-                            </p>
-                            <p t-if="evento.fecha_termino">
-                                <strong>Fecha de término:</strong>
-                                <t t-esc="evento.fecha_termino"/>
-                            </p>
-
+                                Hola <t t-esc="partner.name"/><br/>
+                                <br/>
+                                
+                                Te has registrado correctamente en este evento.<br/>
+                                ¡Te esperamos!                            
+                            
+                            
+                            </p>    
 
                             <a href="/my/eventos"
                             class="btn btn-secondary">
@@ -200,38 +200,52 @@
     </template>
 
 
-</odoo>
-                <!--
-    
-    <template id="portal_my_eventos" name="Mis Eventos">
-        <t t-call="portal.portal_layout">
-            <div class="container">
-                <h2 class="mb-4">
-                    Mis eventos
-                </h2>
-                <div class="row">
-                    <t t-foreach="eventos" t-as="evento">
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h3 class="card-title">
-                                        <t t-esc="evento.name"/> 
-                                    </h3>
-                                    <h5 class="card-title">
-                                        <t t-esc="evento.fecha"/>
-                                    </h5>
-                                    <h7 class="card-title">
-                                        <t t-esc="evento.fecha_publicacion"/>
-                                        <t t-esc="evento.fecha_termino"/>
-                                    </h7>
-                                </div>
-                            </div>
-                        </div>
-                    </t>
-                </div>
-            </div>
+
+
+
+
+
+
+
+<template id="report_asistencia_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 style="text-align: center;">
+                            CONSTANCIA DE REGISTRO
+                        </h2>
+                        <span t-field="o.id"/>
+                        <br/>
+                        <p>
+                            Hola  <b><span t-field="o.partner_id.name"/></b><br/>
+                            con matrícula <b><span t-field="o.partner_id.matricula"/></b>
+                        </p>
+                        <p>
+                            Generaste tu registro de forma exitosa<br/>en nuestra plataforma 
+                            <a href="http://www.sntss-xxv.com">http://www.sntss-xxv.com</a><br/>
+                            para participar en el evento <b><span t-field="o.evento_id.name"/></b>
+                        </p>
+                        <p>
+                            Fecha de registro:
+                            <strong>
+                                <span t-field="o.fecha"/>
+                            </strong>
+                        </p>
+                    </div>
+                </t>
+            </t>
         </t>
     </template>
-         -->
-       
 
+    <record id="action_report_asistencia" model="ir.actions.report">
+        <field name="name">Constancia de Asistencia</field>
+        <field name="model">asistencias</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">instance_sindicato.report_asistencia_document</field>
+        <field name="report_file">instance_sindicato.report_asistencia_document</field>
+        <field name="print_report_name">
+            'Asistencia - %s' % (object.name)
+        </field>
+    </record>
+</odoo>

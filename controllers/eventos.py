@@ -71,6 +71,7 @@ class PortalEventos(CustomerPortal):
             values
         )
 
+    
     @http.route(
         '/my/asistencias/<int:evento_id>',
         type='http',
@@ -78,9 +79,12 @@ class PortalEventos(CustomerPortal):
         website=True
     )
     def portal_asistencia(self, evento_id, **kw):
+        print("*************** PORTAL ASISTENCIA CARGADO ***************")
 
         partner = request.env.user.partner_id
+
         evento = request.env['eventos'].sudo().browse(evento_id)
+
         if not evento.exists():
             return request.not_found()
 
@@ -89,44 +93,30 @@ class PortalEventos(CustomerPortal):
             ('evento_id', '=', evento.id),
         ], limit=1)
 
+        # Si no existe el registro de asistencia, lo creamos
         if not asistencia:
-            request.env['asistencias'].sudo().create({
+            asistencia = request.env['asistencias'].sudo().create({
                 'name': evento.name,
                 'partner_id': partner.id,
                 'evento_id': evento.id,
             })
 
-
-        values = {
-            
-            'evento': evento,
-            'asistencia': asistencia,
-            'page_name': 'evento',
-        }
-
-
-        return request.render(
-            #'instance_sindicato.portal_eventos',
-            'instance_sindicato.portal_evento_asistencia',
-            values
+        # Generar PDF usando el registro de ASISTENCIA
+        pdf_content, content_type = request.env['ir.actions.report'].sudo()._render_qweb_pdf(
+            'instance_sindicato.action_report_asistencia',
+            [asistencia.id]
         )
+        pdfhttpheaders = [
+            ('Content-Type', 'application/pdf'),
+            ('Content-Length', str(len(pdf_content))),
+            (
+                'Content-Disposition',
+                'inline; filename="Constancia de Registro %s.pdf"'
+                % partner.matricula
+            ),
+        ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return request.make_response(
+            pdf_content,
+            headers=pdfhttpheaders
+        )
