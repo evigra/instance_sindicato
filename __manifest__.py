@@ -53,7 +53,7 @@ Main Features
         'views/res_partner.xml',
 
         'views/signup.xml',
-
+        'views/portal_layout.xml',
         'views/portal_credencial.xml',
         'views/portal_eventos.xml',
         #'views/portal_familia.xml',

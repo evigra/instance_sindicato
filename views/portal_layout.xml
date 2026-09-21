@@ -1,15 +1,36 @@
 <odoo>
 
+
+    <!-- ========================================================= -->
+    <!-- ENCABEZADO COMÚN DE LAS PÁGINAS DEL PORTAL               -->
+    <!-- ========================================================= -->
+
+    <template id="portal_page_header" name="Encabezado página portal">
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <!-- Botón regresar -->
+            <a t-att-href="back_url or '/my/'"
+               class="btn btn-light"
+               title="Regresar">
+                <i class="fa fa-arrow-left"/>
+            </a>
+            <!-- Título -->
+            <h3 class="mb-0">
+                <t t-esc="page_title"/>
+            </h3>
+        </div>
+    </template>
+
+ <!--
     <template id="portal_layout_inherit" inherit_id="portal.portal_layout">
 
 
-        <!--
+       
         <t t-call="portal.portal_breadcrumbs"/>
         <xpath expr="//div[contains(@class,'o_portal_wrap')]" position="inside">
         
         
         <xpath expr="//t[@t-call='portal.portal_breadcrumbs']" position="before">
-        -->
+        
 
         <xpath expr="//t[@t-call='portal.portal_breadcrumbs']" position="after">
 
@@ -27,10 +48,7 @@
                             Documentos
                         </a>
 
-
-
-
         </xpath>
     </template>
-
+    -->
 </odoo>

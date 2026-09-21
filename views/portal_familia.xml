@@ -1,8 +1,5 @@
+<!--
 <odoo>
-
-    <!-- ========================================= -->
-    <!-- TARJETA "MIS EVENTOS" EN EL PORTAL       -->
-    <!-- ========================================= -->
 
 
     <template id="portal_user_dropdown_familia"
@@ -23,15 +20,12 @@
         <t t-call="portal.portal_layout">
             <t t-set="title">Mi familia</t>
             <div class="container">
-                
-                <!-- Título -->
                 <div class="row mb-4">
                     <div class="col-12">
                         <h2>Mi familia </h2>
                     </div>
                 </div>
 
-                <!-- Lista de eventos -->
                 <div class="row">
                     <t t-if="familiares">
                         <t t-foreach="familiares" t-as="familiar">
@@ -47,7 +41,6 @@
                             </a>
                         </t>
                     </t>
-                    <!-- No hay eventos -->
                     <t t-else="">
                         <div class="col-12">
                             <div class="alert alert-info">
@@ -63,3 +56,4 @@
 
 
 </odoo>
+-->

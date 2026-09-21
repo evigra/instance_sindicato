@@ -5,31 +5,6 @@
     <!-- ========================================= -->
 
 
-    <template id="portal_user_dropdown_credential"
-              inherit_id="portal.user_dropdown">
-
-        <xpath expr="//div[@id='o_logout_divider']" position="before">
-
-            <a href="/my/credencial"
-               role="menuitem"
-               class="dropdown-item ps-3"
-               id="o_credential">
-                <i class="fa fa-fw fa-id-card me-1 small text-primary text-primary-emphasis"/>
-                Mi Credencial
-            </a>
-            <!--
-            <a href="/my/familia"
-               role="menuitem"
-               class="dropdown-item ps-3"
-               id="o_credential">
-                <i class="fa fa-fw fa-id-card me-1 small text-primary text-primary-emphasis"/>
-                Mi Familia
-            </a>
-            -->
-        </xpath>
-
-    </template>
-
     <template id="portal_my_home_eventos"    name="Mis Eventos"
               inherit_id="portal.portal_my_home"        priority="30">
 
@@ -38,9 +13,9 @@
             <div class="o_portal_category row g-2 mt-3" id="portal_common_eventos">
                 <t t-call="portal.portal_docs_entry" t-if="False"/>
                 <t t-call="portal.portal_docs_entry">
-                    <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
-                    <t t-set="title">Registros o Eventos</t>
-                    <t t-set="text">Aqui encontraras </t>
+                    <t t-set="icon" t-value="'/instance_sindicato/static/src/img/eventos.png'"/>
+                    <t t-set="title">Eventos o Registros</t>
+                    <t t-set="text">Eventos y Registros que nos comboca nuestra seccion</t>
                     <t t-set="url" t-value="'/my/eventos'"/>
                     <t t-set="config_card" t-value="True"/>
                 </t>
@@ -51,7 +26,15 @@
 
     <template id="portal_eventos"   name="Mis Eventos">
         <t t-call="portal.portal_layout">
-            <t t-set="title">Mis Eventos o Registros</t>
+
+            <t t-set="additional_title">Security</t>
+            <t t-set="no_breadcrumbs" t-value="1"/>
+
+
+            <t t-set="page_title">Mis Eventos o Registros</t>
+            <t t-set="back_url">/my/</t>
+            <t t-call="instance_sindicato.portal_page_header"/>
+
             <div class="container">
                 <!-- Breadcrumb 
                 <div class="row">
@@ -61,11 +44,7 @@
                 </div>
                 -->
                 <!-- Título -->
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <h2>   Mis Eventos o Registros </h2>
-                    </div>
-                </div>
+
 
                 <!-- Lista de eventos -->
                 <div class="row">
@@ -129,8 +108,11 @@
               name="Detalle del Evento">
 
         <t t-call="portal.portal_layout">
-
             <t t-if="evento">
+                <t t-set="page_title">Mis Eventos o Registros</t>
+                <t t-set="back_url">/my/eventos</t>
+                <t t-call="instance_sindicato.portal_page_header"/>
+
                 <t t-set="title">
                     <t t-esc="evento.name"/>
                 </t>
@@ -139,13 +121,11 @@
                             <t t-if="evento.publicacion_file">
                                 <img t-att-src="'/web/image/eventos/%s/publicacion_file' % evento.id" width="100%"/>
                             </t>
-
                     </div>
                     <a target="_new" t-att-href="'/my/asistencias/%s' % evento.id"
                     class="btn btn-secondary">
                         Registrarme
                     </a>
-
                     <a href="/my/eventos"
                     class="btn btn-secondary">
                         Regresar a mis eventos
