@@ -230,6 +230,13 @@
     >
 
         <t t-call="portal.portal_layout">
+            <t t-set="additional_title">Security</t>
+            <t t-set="no_breadcrumbs" t-value="1"/>
+
+
+            <t t-set="page_title">Mi Familia / Editar</t>
+            <t t-set="back_url">/my/children</t>
+            <t t-call="instance_sindicato.portal_page_header"/>
 
             <t t-set="additional_title">
 
@@ -275,6 +282,7 @@
                                         if child
                                         else '/my/children/new'
                                     "
+                                    onsubmit="this.querySelector('button[type=submit]').disabled = true;"
                                 >
 
                                     <input

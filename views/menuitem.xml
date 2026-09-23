@@ -1,4 +1,10 @@
 <odoo>
+
+    <record id="base.menu_apps" model="ir.ui.menu">
+        <field name="groups_id"
+               eval="[(6, 0, [ref('base.group_system')])]"/>
+    </record>
+
     <record id="trabajador_res_partner_model_action" model="ir.actions.act_window">
         <field name="name">Trabajadores</field>
         <field name="res_model">res.partner</field>

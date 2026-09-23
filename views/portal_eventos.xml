@@ -109,27 +109,33 @@
 
         <t t-call="portal.portal_layout">
             <t t-if="evento">
-                <t t-set="page_title">Mis Eventos o Registros</t>
+
+                <t t-set="additional_title">Security</t>
+                <t t-set="no_breadcrumbs" t-value="1"/>
+
+                <t t-set="page_title">Mis Eventos o Registros / <t t-esc="evento.name"/></t>
                 <t t-set="back_url">/my/eventos</t>
                 <t t-call="instance_sindicato.portal_page_header"/>
 
                 <t t-set="title">
                     <t t-esc="evento.name"/>
                 </t>
-                <div class="container">
+                <div>
+                    <a target="_new" t-att-href="'/my/asistencias/%s' % evento.id"
+                    class="btn btn-primary">
+                        Registrarme
+                    </a>
+                    <a href="/my/eventos"
+                    class="btn btn-outline-primary">
+                        Regresar a mis eventos
+                    </a>
+                    <br/>
+                    <br/>
                     <div class="card shadow-sm">
                             <t t-if="evento.publicacion_file">
                                 <img t-att-src="'/web/image/eventos/%s/publicacion_file' % evento.id" width="100%"/>
                             </t>
                     </div>
-                    <a target="_new" t-att-href="'/my/asistencias/%s' % evento.id"
-                    class="btn btn-secondary">
-                        Registrarme
-                    </a>
-                    <a href="/my/eventos"
-                    class="btn btn-secondary">
-                        Regresar a mis eventos
-                    </a>
                 </div>
             </t>
         </t>
