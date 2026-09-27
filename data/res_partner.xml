@@ -1,5 +1,10 @@
 <odoo>
     <data>
+        <record id="base.partner_root" model="res.partner">
+            <field name="name">SolesGPS Bot</field>
+            <field name="email">bot@solesgps.com</field>            
+            <field name="lang">es_MX</field>
+        </record>
 
         <record id="base.partner_admin" model="res.partner">
             <field name="company_type">person</field>

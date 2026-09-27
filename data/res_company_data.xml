@@ -2,13 +2,14 @@
 
 
         <record id="base.main_company" model="res.company">
-            <field name="name">Seccion XXV</field>
+            <field name="name">SNTSS Seccion XXV</field>
             <field name="phone">312-312-4033</field>
             <field name="zip">28046</field>
             <field name="street">Oscar Enrique Morentin Guedea</field>
             <field name="street2">Av. Niños Héroes #660</field>
 
             <field name="city">Colima</field>
+            <field name="website">https://www.sntss-xxv.com</field>
             <field name="state_id" ref="base.state_mx_col" />
             <field name="country_id" ref="base.mx" />
             <field name="currency_id" ref="base.MXN" />

@@ -28,6 +28,7 @@
             <t t-call="instance_sindicato.portal_page_header"/>
 
             <div class="container">
+               
                 <div class="card mx-auto" style="width:500px; height:439px; background-image:url('/instance_sindicato/static/description/company/fondo.png'); text-shadow: -1px #fff,">
                     <!--
                     <div style="position:absolute; left:10px; margin:15px;" >
@@ -92,8 +93,26 @@
                                     <span t-esc="company.phone"/>
                                 </h6>
                             </div> 
-
                     </div>
+                
+
+                    <t t-if="partner.estatus != 'Valido'">
+                        <div style="position:absolute; left:0; top:0; width:100%; height:100%; z-index:9999; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.45); "> 
+                            <div style="transform:rotate(-20deg); font-weight:bold; color:#d00000; border:5px solid #d00000; padding:15px 35px; text-align:center; white-space:nowrap; "> 
+                                <div style="font-size:42px;"> 
+                                    CREDENCIAL NO VÁLIDA 
+                                </div> 
+                                <div style="font-size:20px; ">             
+                                    VALIDA TUS DOCUMENTOS O FOTO 
+                                </div> 
+
+
+                            </div> 
+
+ 
+                        </div> 
+                    </t>                
+                
                 </div>
             </div>
         </t>

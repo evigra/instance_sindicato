@@ -123,6 +123,17 @@
     -->
        
 
+    <record id="rule_erp_manager_edit_all_contacts" model="ir.rule">
+        <field name="name">Permisos de acceso - Modificar todos los contactos</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
 
         
 </odoo>

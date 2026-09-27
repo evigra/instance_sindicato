@@ -133,7 +133,7 @@
             <div class="row mt-4">
 
                 <div class="col-12">
-                    <h4>Fotografía</h4>
+                    <h4>Fotografía para credencial</h4>
                     <hr/>
                 </div>
 
@@ -211,7 +211,7 @@
                         name="ine_file"
                         id="ine_file"
                         class="form-control"
-                        accept=".jpg,.jpeg,.png"
+                        accept=".jpg,.jpeg,.png,.webp"
                     />
 
                     <small
@@ -243,7 +243,7 @@
                         name="tarjeton_file"
                         id="tarjeton_file"
                         class="form-control"
-                        accept=".jpg,.jpeg,.png"
+                        accept=".jpg,.jpeg,.png,.webp"
                     />
 
                     <small

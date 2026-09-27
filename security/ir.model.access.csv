@@ -6,3 +6,4 @@ access_asistencias_user,access_asistencias,model_asistencias,eventos_group_user,
 access_asistencias,access_asistencias,model_asistencias,eventos_group_manager,1,1,1,1
 access_plantilla_user,access_plantilla,model_plantilla,eventos_group_user,1,0,1,0
 access_plantilla,access_plantilla,model_plantilla,eventos_group_manager,1,1,1,1
+access_res_partner_erp_manager,access.res.partner.erp.manager,base.model_res_partner,base.group_erp_manager,1,1,1,0

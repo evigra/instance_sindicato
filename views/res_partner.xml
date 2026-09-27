@@ -7,6 +7,19 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='name']" position="before">
+                <header>
+                    <button
+                        name="action_abrir_credencial"
+                        type="object"
+                        string="Credencial"
+                        class="btn-primary"
+                        icon="fa-id-card"
+                    />
+
+                    <field name="estatus" widget="statusbar" options="{'clickable': '1'}"/>
+
+                </header>
+
                 <field name="matricula" placeholder="Ej. 99064616"/>
             </xpath>
             <xpath expr="//field[@name='company_type']" position="attributes">
@@ -38,6 +51,16 @@
 
                 <page string="Documentos">
 
+                        <group>
+
+                            <field
+                                name="tarjeton_file"
+                                widget="image"
+                                class="o_document_preview"
+                                options="{'preview_image': 'tarjeton_file'}"
+                            />
+
+                        </group>
                         <!-- INE -->
                         <group>
 
@@ -46,16 +69,6 @@
                                 widget="image"
                                 class="o_document_preview"
                                 options="{'preview_image': 'ine_file'}"
-                            />
-
-                        </group>
-                        <group>
-
-                            <field
-                                name="tarjeton_file"
-                                widget="image"
-                                class="o_document_preview"
-                                options="{'preview_image': 'tarjeton_file'}"
                             />
 
                         </group>

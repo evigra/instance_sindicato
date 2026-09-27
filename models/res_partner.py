@@ -7,7 +7,7 @@ class ResPartner(models.Model):
     matricula = fields.Char(
         string='Matrícula'
     )
-
+    estatus = fields.Selection([('Pendiente', 'Pendiente'), ('Revisar', 'Revisar'),('Valido', 'Valido') ], default='Pendiente', copy=False, tracking=True,)
 
     ine_file = fields.Binary(
         string='INE',
@@ -63,3 +63,17 @@ class ResPartner(models.Model):
         ],
         string='Sexo'
     )
+
+
+
+
+
+
+    def action_abrir_credencial(self):
+        self.ensure_one()
+
+        return {
+            'type': 'ir.actions.act_url',
+            'url': f'/my/credencial/{self.id}',
+            'target': 'new',
+        }    

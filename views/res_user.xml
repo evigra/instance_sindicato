@@ -1,0 +1,19 @@
+<odoo>
+
+    <record id="view_users_form_tipo_usuario" model="ir.ui.view">
+        <field name="name">res.users.form.tipo.usuario</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='sel_groups_1_10_11']"
+                   position="attributes">
+
+                <attribute name="groups"/>
+                
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

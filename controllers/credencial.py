@@ -18,12 +18,27 @@ class CredencialPortal(CustomerPortal):
     )
     def portal_credencial(self, **kw):
         partner = request.env.user.partner_id
-        company = request.env.company
-        
+        return self.portal_metodo(partner)
+
+
+    @http.route(
+        '/my/credencial/<int:credencia_id>',
+        type='http',
+        auth='user',
+        website=True
+    )
+    def portal_credencial_detalle(self, credencia_id, **kw):
+        partner = request.env['res.partner'].sudo().browse(credencia_id)
+        return  self.portal_metodo(partner)
+
+
+    def portal_metodo(self, partner, **kw):
+
+        company = request.env.company        
 
         url = request.httprequest.host_url.rstrip(
             '/'
-        ) + f'/credencial/validar/{partner.id}'
+        ) + f'/my/0credencial/{partner.id}'
 
         qr = qrcode.QRCode(
             version=1,
@@ -43,13 +58,14 @@ class CredencialPortal(CustomerPortal):
             buffer.getvalue()
         ).decode()
 
-
         return request.render(
             'instance_sindicato.portal_credencial',
             {
                 'partner': partner,
                 'qr_code': qr_base64,
                 'company': company,
-
             }
         )
+
+
+        

@@ -51,6 +51,7 @@ Main Features
         'views/plantilla.xml',
         'views/menuitem.xml',
         'views/res_partner.xml',
+        #'views/res_user.xml',
 
         'views/signup.xml',
         'views/portal_layout.xml',
