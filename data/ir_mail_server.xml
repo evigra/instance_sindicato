@@ -1,6 +1,5 @@
 <odoo>
 
-    <data>
         <record id="fetchmail_server" model="fetchmail.server"> 
             <field name="name">catchall@sntss-xxv.com</field>
             <field name="server">imap.us.appsuite.cloud</field>
@@ -9,7 +8,5 @@
             <field name="user">catchall@sntss-xxv.com</field>
             <field name="password">@EvG30AvI03@</field>
         </record>
-    </data>
-    
-    
+        
 </odoo>
