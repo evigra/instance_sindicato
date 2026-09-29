@@ -99,7 +99,42 @@
 
 
 
+    <record id="mail_template_partner_revisar" model="mail.template">
+        <field name="name">Trabajador - Estado Revisar</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="subject">Tu registro requiere revisión</field>
 
+        <field name="email_from">
+            {{ (object.company_id.email or user.email) }}
+        </field>
+
+        <field name="email_to">
+            {{ object.email }}
+        </field>
+
+        <field name="body_html" type="html">
+            <div>
+                <p>Hola <t t-out="object.name"/>,</p>
+
+                <p>
+                    Hemos notado inconsitencias en tu documentacion, favor de verificar
+                    - Foto tipo credencial (Saldra en tu gafete)
+                    - Foto de tu INE
+                    - Foto de tu tarjeton mas reciente                    
+                </p>
+
+                <p>
+                    Por favor, verifica la información proporcionada.
+                </p>
+
+                <p>
+                    Saludos.
+                </p>
+            </div>
+        </field>
+
+        <field name="auto_delete" eval="False"/>
+    </record>
 
 
 

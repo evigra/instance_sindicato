@@ -77,3 +77,29 @@ class ResPartner(models.Model):
             'url': f'/my/credencial/{self.id}',
             'target': 'new',
         }    
+
+    def write(self, vals):
+        partners_a_revisar = self.filtered(
+            lambda p: p.estatus != 'Revisar'
+        )
+
+        res = super().write(vals)
+
+        if vals.get('estatus') == 'Revisar':
+            for partner in partners_a_revisar:
+                if partner.estatus == 'Revisar':
+                    partner._enviar_correo_revisar()
+
+        return res
+
+    def _enviar_correo_revisar(self):
+        template = self.env.ref(
+            'instance_sindicato.mail_template_partner_revisar',
+            raise_if_not_found=False
+        )
+
+        if template:
+            template.send_mail(
+                self.id,
+                force_send=True
+            )        

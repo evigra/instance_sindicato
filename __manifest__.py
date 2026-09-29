@@ -42,6 +42,9 @@ Main Features
         'data/eventos.xml',
         'data/res_company_data.xml',
         'data/res_users.xml',
+        'data/ir_config_parameter.xml',
+        'data/ir_mail_server.xml',
+        'data/mail_alias_domain.xml',
 
         'security/security.xml',
         'security/ir.model.access.csv',

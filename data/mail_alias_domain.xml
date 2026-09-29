@@ -1,0 +1,14 @@
+<odoo>
+
+    
+    <data>
+        <record id="mail_alias_domain" model="mail.alias.domain"> 
+            <field name="name">sntss-xxv.com</field>
+            <field name="bounce_alias">bounce</field>
+            <field name="catchall_alias">catchall</field>
+            <field name="default_from">notificaciones</field>            
+        </record>
+    </data>
+
+
+</odoo>

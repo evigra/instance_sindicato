@@ -51,16 +51,6 @@ class PortalEventos(CustomerPortal):
         if not evento.exists():
             return request.not_found()
 
-        print("====================================")
-        print("EVENTO ID:", evento.id)
-        print("NOMBRE:", evento.name)
-        print("PUBLICACION FILE:", bool(evento.publicacion_file))
-        print("PUBLICACION FILE LENGTH:", len(evento.publicacion_file or b''))
-        print("FILENAME:", evento.publicacion_filename)
-        print("====================================")
-
-
-
         values = {
             'evento': evento,
             'page_name': 'evento',
@@ -79,7 +69,6 @@ class PortalEventos(CustomerPortal):
         website=True
     )
     def portal_asistencia(self, evento_id, **kw):
-        print("*************** PORTAL ASISTENCIA CARGADO ***************")
 
         partner = request.env.user.partner_id
 
@@ -101,18 +90,115 @@ class PortalEventos(CustomerPortal):
                 'evento_id': evento.id,
             })
 
-        # Generar PDF usando el registro de ASISTENCIA
-        pdf_content, content_type = request.env['ir.actions.report'].sudo()._render_qweb_pdf(
-            'instance_sindicato.action_report_asistencia',
-            [asistencia.id]
+        # ==========================================================
+
+
+        url = request.httprequest.host_url.rstrip(
+            '/'
+        ) + f'/my/credencial/{partner.id}'
+
+        qr = qrcode.QRCode(
+            version=1,
+            box_size=10,
+            border=4,
         )
+
+        qr.add_data(url)
+        qr.make(fit=True)
+
+        img = qr.make_image()
+
+        buffer = io.BytesIO()
+        img.save(buffer, format='PNG')
+
+        qr_base64 = base64.b64encode(
+            buffer.getvalue()
+        ).decode()
+
+
+
+        # ==========================================================
+        # GENERAR PDF
+        # ==========================================================
+
+        pdf_content, content_type = request.env[
+            'ir.actions.report'
+        ].sudo()._render_qweb_pdf(
+            'instance_sindicato.action_report_asistencia',
+            [asistencia.id],
+            data={
+                'qr_base64': qr_base64,
+            }
+        )
+        nombre_pdf = 'Constancia de Registro %s.pdf' % partner.matricula
+
+        # ==========================================================
+        # CREAR ADJUNTO
+        # ==========================================================
+
+        attachment = request.env['ir.attachment'].sudo().create({
+            'name': nombre_pdf,
+            'type': 'binary',
+            'datas': base64.b64encode(pdf_content),
+            'mimetype': 'application/pdf',
+            'res_model': 'asistencias',
+            'res_id': asistencia.id,
+        })
+
+        # ==========================================================
+        # CREAR CORREO
+        # ==========================================================
+
+        email_to = partner.email
+        email_from = '%s <%s>' % (
+            request.env.company.name,
+            request.env.company.email
+        )
+        if email_to:
+            mail_values = {
+                'subject': 'Constancia de Registro - %s' % evento.name,
+                'body_html': """
+                    <p>
+                        Apreciable
+                        <h3>%s</h3>
+                    </p>
+                    <p>
+                        Se ha generado correctamente tu constancia
+                        de registro para el evento <strong>%s</strong>.
+                    </p>
+                    <img src="data:image/png;base64,%s"   style="width:150px;"/>
+                    <p>
+                        Encontrarás la constancia adjunta a este correo
+                        en formato PDF.
+                    </p>
+
+                    <p>Saludos.</p>
+                """ % (
+                    partner.name,
+                    evento.name,
+                    qr_base64,
+                ),
+
+                'email_to': email_to,
+                'email_from': email_from,
+                'attachment_ids': [(4, attachment.id)],
+            }
+
+            mail = request.env['mail.mail'].sudo().create(mail_values)
+
+            # Enviar inmediatamente
+            mail.sudo().send()
+
+        # ==========================================================
+        # DEVOLVER PDF AL NAVEGADOR
+        # ==========================================================
+
         pdfhttpheaders = [
             ('Content-Type', 'application/pdf'),
             ('Content-Length', str(len(pdf_content))),
             (
                 'Content-Disposition',
-                'inline; filename="Constancia de Registro %s.pdf"'
-                % partner.matricula
+                'inline; filename="%s"' % nombre_pdf
             ),
         ]
 

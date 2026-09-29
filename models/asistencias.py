@@ -24,3 +24,17 @@ class asistencias(models.Model):
 
 
 
+class ReportAsistencia(models.AbstractModel):
+    _name = 'report.instance_sindicato.report_asistencia_document'
+    _description = 'Reporte de Asistencia'
+
+    @api.model
+    def _get_report_values(self, docids, data=None):
+        asistencias = self.env['asistencias'].browse(docids)
+
+        return {
+            'doc_ids': docids,
+            'doc_model': 'asistencias',
+            'docs': asistencias,
+            'qr_base64': data.get('qr_base64') if data else False,
+        }
