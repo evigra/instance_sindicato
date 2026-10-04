@@ -223,7 +223,6 @@
                                 <span t-field="o.partner_id.matricula"/>
                             </b>
                         </p>
-
                         <p>
                             Generaste tu registro de forma exitosa
                             <br/>
@@ -232,32 +231,21 @@
                                 https://www.sntss-xxv.com
                             </a>
                             <br/>
-
                             para participar en el evento
                             <b>
                                 <span t-field="o.evento_id.name"/>
                             </b>
                         </p>
-
                         <p>
                             Fecha de registro:
                             <strong>
                                 <span t-field="o.fecha"/>
                             </strong>
                         </p>
-
-
-
-
                     </div>
-
-           
-
                 </div>
-
             </t>
         </t>
-
     </t>
 </template>
 

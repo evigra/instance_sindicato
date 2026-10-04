@@ -97,42 +97,51 @@
         </field>
     </record>
 
+    <template id="template_partner_revisar"
+            inherit_id="instance_sindicato.template_mail">
+        <xpath expr="//td[@id='contenido']" position="inside">
+
+            <div style="text-align: left; margin: 30px 0;">
+                <p >
+                    Hemos notado inconsitencias en tu documentacion, favor de verificar<br/>
+                    - Foto tipo credencial (Saldra en tu gafete)<br/>
+                    - Foto de tu INE<br/>
+                    - Foto de tu tarjeton mas reciente                    
+                </p>
+                <p>
+                    Por favor, verifica la información proporcionada.
+                </p>
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="https://www.sntss-xxv.com/my/account"
+                    style="
+                        background-color:#875a7b;
+                        padding:8px 16px 8px 16px;
+                        text-decoration:none;
+                        color:#fff;
+                        border-radius:5px;font-size:13px
+                    ">
+                        Modificar datos
+                    </a>
+                </div>                
+                <p>
+                    Saludos.
+                </p>
+            </div>
+        </xpath>
+    </template>
 
 
     <record id="mail_template_partner_revisar" model="mail.template">
         <field name="name">Trabajador - Estado Revisar</field>
         <field name="model_id" ref="base.model_res_partner"/>
-        <field name="subject">Tu registro requiere revisión</field>
-
+        <field name="subject">Tu datos requieren ser actualizados</field>
         <field name="email_from">
-            {{ (object.company_id.email or user.email) }}
+            {{ object.env.company.name }} &lt;{{ object.env.company.email }}&gt;
         </field>
-
-        <field name="email_to">
-            {{ object.email }}
-        </field>
-
+        <field name="email_to">{{ object.email }}</field>
         <field name="body_html" type="html">
-            <div>
-                <p>Hola <t t-out="object.name"/>,</p>
-
-                <p>
-                    Hemos notado inconsitencias en tu documentacion, favor de verificar
-                    - Foto tipo credencial (Saldra en tu gafete)
-                    - Foto de tu INE
-                    - Foto de tu tarjeton mas reciente                    
-                </p>
-
-                <p>
-                    Por favor, verifica la información proporcionada.
-                </p>
-
-                <p>
-                    Saludos.
-                </p>
-            </div>
+            <t t-call="instance_sindicato.template_partner_revisar"/>
         </field>
-
         <field name="auto_delete" eval="False"/>
     </record>
 

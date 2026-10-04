@@ -234,7 +234,7 @@
                         for="tarjeton_file"
                         class="form-label"
                     >
-                        Tarjetón
+                        Tarjetón o Contrato
                     </label>
 
                     <input

@@ -82,7 +82,6 @@ class ResPartner(models.Model):
         partners_a_revisar = self.filtered(
             lambda p: p.estatus != 'Revisar'
         )
-
         res = super().write(vals)
 
         if vals.get('estatus') == 'Revisar':
@@ -99,7 +98,7 @@ class ResPartner(models.Model):
         )
 
         if template:
-            template.send_mail(
+            template.with_company(self.env.company).send_mail(
                 self.id,
                 force_send=True
-            )        
+            )
