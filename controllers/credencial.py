@@ -38,7 +38,7 @@ class CredencialPortal(CustomerPortal):
 
         url = request.httprequest.host_url.rstrip(
             '/'
-        ) + f'/my/0credencial/{partner.id}'
+        ) + f'/my/credencial/{partner.id}'
 
         qr = qrcode.QRCode(
             version=1,
