@@ -53,11 +53,12 @@ Main Features
         'views/eventos.xml',
         'views/plantilla.xml',
         'views/menuitem.xml',
+        'views/template_mail.xml',
         'views/res_partner.xml',
         #'views/res_user.xml',
 
         'views/signup.xml',
-        'views/template_mail.xml',
+        
         'views/portal_layout.xml',
         'views/portal_credencial.xml',
         'views/portal_eventos.xml',
