@@ -24,7 +24,7 @@ class CredencialPortal(CustomerPortal):
     @http.route(
         '/my/credencial/<int:credencia_id>',
         type='http',
-        auth='user',
+        auth='public',
         website=True
     )
     def portal_credencial_detalle(self, credencia_id, **kw):
