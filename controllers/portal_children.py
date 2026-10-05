@@ -6,11 +6,6 @@ import base64
 
 
 
-
-
-
-
-
 class Portalchildren(CustomerPortal):
 
     # ============================================================
@@ -168,6 +163,25 @@ class Portalchildren(CustomerPortal):
                 vals['image_1920'] = base64.b64encode(
                     image_file.read()
                 )
+
+            tarjeton_file = request.httprequest.files.get(
+                'tarjeton_file'
+            )
+
+            if tarjeton_file and tarjeton_file.filename:
+                vals['tarjeton_file'] = base64.b64encode(
+                    tarjeton_file.read()
+                )
+
+            ine_file = request.httprequest.files.get(
+                'ine_file'
+            )
+
+            if ine_file and ine_file.filename:
+                vals['ine_file'] = base64.b64encode(
+                    ine_file.read()
+                )
+
 
             child.sudo().write(vals)
 

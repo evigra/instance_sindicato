@@ -109,7 +109,8 @@
                                         </a>
 
                                         <a
-                                            t-att-href="'/my/children/%s/credencial' % child.id"
+                                            
+                                            t-att-href="'/my/credencial/%s' % child.id"
                                             class="btn btn-primary"                                            
                                         >
                                             <i class="fa fa-id-card me-1"/>
@@ -458,7 +459,93 @@
                                         </select>
 
                                     </div>
+            <div class="row mt-4">
 
+                <div class="col-12">
+                    <h4>Documentos</h4>
+                    <hr/>
+                </div>
+
+
+                <!-- ============================================= -->
+                <!-- INE                                             -->
+                <!-- ============================================= -->
+
+
+                <!-- ============================================= -->
+                <!-- TARJETÓN                                         -->
+                <!-- ============================================= -->
+
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label
+                        for="tarjeton_file"
+                        class="form-label"
+                    >
+                        Calificaciones
+                    </label>
+
+                    <input
+                        type="file"
+                        name="tarjeton_file"
+                        id="tarjeton_file"
+                        class="form-control"
+                        accept=".jpg,.jpeg,.png,.webp"
+
+                        t-att-value="
+                            child.tarjeton_file
+                            if child and child.tarjeton_file
+                            else ''
+                        "
+                    />
+
+                    <small
+                        t-if="child.tarjeton_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        Calificaciones Cargadas
+                    </small>
+                </div>
+
+
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label
+                        for="ine_file"
+                        class="form-label"
+                    >
+                        Acta de nacimiento
+                    </label>
+
+                    <input
+                        type="file"
+                        name="ine_file"
+                        id="ine_file"
+                        class="form-control"
+                        accept=".jpg,.jpeg,.png,.webp"
+
+                        t-att-value="
+                            child.ine_file
+                            if child and child.ine_file
+                            else ''
+                        "
+
+
+                    />
+
+                    <small
+                        t-if="child.ine_file"
+                        class="text-success d-block mt-2"
+                    >
+                        <i class="fa fa-check-circle"/>
+                        Acta de nacimiento cargada
+                    </small>
+
+                </div>
+
+
+            </div>
 
                                     <!-- BOTONES -->
 
@@ -497,95 +584,6 @@
 
     </template>
 
-
-
-
-
-<template id="portal_children_credencial" name="Mi credencial">
-
-
-    <t t-call="portal.portal_layout">    
-
-        <t t-set="additional_title">Security</t>
-        <t t-set="no_breadcrumbs" t-value="1"/>
-
-        <t t-set="page_title">Mi Familia / Credencial</t>
-        <t t-set="back_url">/my/children</t>
-        <t t-call="instance_sindicato.portal_page_header"/>
-
-
-
-        <div class="container">
-            <div class="card mx-auto" style="width:500px; height:439px; background-image:url('/instance_sindicato/static/description/company/fondo.png'); text-shadow: -1px #fff,">
-                <div style="position:absolute; left:0px; top:140px; width:250px;" class="text-center">
-                    <div style="" class="text-center">
-                        <img 
-                            t-att-src="'/my/child/image/%s' % child.id"
-                            class="img-fluid rounded-circle"
-                            style="width: 150px; height: 150px; object-fit: cover;"/>
-
-                        <!--       
-                        <img t-att-src="'/web/image/res.partner/%s/image_1920' % child.id"
-                            class="rounded-circle mb-3"
-                            style="width:120px;height:120px;object-fit:cover;"/>
-                        -->
-                        <div style="position:absolute; left:0px; top:150px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
-                                <t t-esc="child.name"/>
-                            </h6>
-                        </div> 
-                        <div style="position:absolute; left:0px; top:170px; width:100%" class="text-center">
-                            <h7 style="color:#bbb;">
-                                <t t-esc="partner.name"/>
-                            </h7>
-                        </div>                          
-
-                        <div style="position:absolute; left:0px; top:190px; width:100%" class="text-center">
-                            <h7 style="color:#bbb;">
-                                <t t-esc="partner.matricula"/>
-                            </h7>
-                        </div>                          
-                    </div>
-                </div>
-                <div style="position:absolute; right:0px; width:250px; top:70px;" class="text-center">
-                    <img t-att-src="'data:image/png;base64,%s' % qr_code"  style="width:150px;"/>
-                        <div style="position:absolute; left:0px; top:190px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
-                                <span t-esc="company.street"/>
-                            </h6>
-                        </div> 
-                        <div style="position:absolute; left:0px; top:205px; width:100%" class="text-center">
-                            <h8 style="color:#aaa;">
-                                Secretario General 
-                                <span t-esc="company.name"/>
-                            </h8>
-                        </div> 
-
-
-                        <div style="position:absolute; left:0px; top:250px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
-                                En caso de accidente llamar a                                
-                            </h6>
-                        </div> 
-                        <div style="position:absolute; left:0px; top:270px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
-                                <span t-esc="partner.name"/>
-                            </h6>
-                        </div> 
-                        <div style="position:absolute; left:0px; top:290px; width:100%" class="text-center">
-                            <h6 style="color:#aaa;">
-                                <span t-esc="partner.phone"/>
-                            </h6>
-                        </div> 
-
-                </div>
-            </div>
-        </div>
-    </t>
-
-
-
-</template>
 
 
 

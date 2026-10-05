@@ -61,7 +61,7 @@ class PortalEventos(CustomerPortal):
             values
         )
 
-    
+        
     @http.route(
         '/my/asistencias/<int:evento_id>',
         type='http',
@@ -70,6 +70,10 @@ class PortalEventos(CustomerPortal):
     )
     def portal_asistencia(self, evento_id, **kw):
 
+        # ==========================================================
+        # DATOS
+        # ==========================================================
+
         partner = request.env.user.partner_id
 
         evento = request.env['eventos'].sudo().browse(evento_id)
@@ -77,12 +81,15 @@ class PortalEventos(CustomerPortal):
         if not evento.exists():
             return request.not_found()
 
+        # ==========================================================
+        # BUSCAR / CREAR ASISTENCIA
+        # ==========================================================
+
         asistencia = request.env['asistencias'].sudo().search([
             ('partner_id', '=', partner.id),
             ('evento_id', '=', evento.id),
         ], limit=1)
 
-        # Si no existe el registro de asistencia, lo creamos
         if not asistencia:
             asistencia = request.env['asistencias'].sudo().create({
                 'name': evento.name,
@@ -91,11 +98,13 @@ class PortalEventos(CustomerPortal):
             })
 
         # ==========================================================
+        # GENERAR URL DEL QR
+        # ==========================================================
 
-
-        url = request.httprequest.host_url.rstrip(
-            '/'
-        ) + f'/my/credencial/{partner.id}'
+        url = (
+            request.httprequest.host_url.rstrip('/')
+            + f'/my/credencial/{partner.id}'
+        )
 
         qr = qrcode.QRCode(
             version=1,
@@ -115,8 +124,6 @@ class PortalEventos(CustomerPortal):
             buffer.getvalue()
         ).decode()
 
-
-
         # ==========================================================
         # GENERAR PDF
         # ==========================================================
@@ -130,7 +137,11 @@ class PortalEventos(CustomerPortal):
                 'qr_base64': qr_base64,
             }
         )
-        nombre_pdf = 'Constancia de Registro %s.pdf' % partner.matricula
+
+        nombre_pdf = (
+            'Constancia de Registro %s.pdf'
+            % partner.matricula
+        )
 
         # ==========================================================
         # CREAR ADJUNTO
@@ -146,49 +157,30 @@ class PortalEventos(CustomerPortal):
         })
 
         # ==========================================================
-        # CREAR CORREO
+        # ENVIAR CORREO CON MAIL TEMPLATE
         # ==========================================================
 
-        email_to = partner.email
-        email_from = '%s <%s>' % (
-            request.env.company.name,
-            request.env.company.email
+        template = request.env.ref(
+            'instance_sindicato.mail_template_eventos',
+            raise_if_not_found=False
         )
-        if email_to:
-            mail_values = {
-                'subject': 'Constancia de Registro - %s' % evento.name,
-                'body_html': """
-                    <p>
-                        Apreciable
-                        <h3>%s</h3>
-                    </p>
-                    <p>
-                        Se ha generado correctamente tu constancia
-                        de registro para el evento <strong>%s</strong>.
-                    </p>
-                    <img src="data:image/png;base64,%s"   style="width:150px;"/>
-                    <p>
-                        Encontrarás la constancia adjunta a este correo
-                        en formato PDF.
-                    </p>
 
-                    <p>Saludos.</p>
-                """ % (
-                    partner.name,
-                    evento.name,
-                    qr_base64,
-                ),
+        if template and partner.email:
+            template = template.sudo().with_company(
+                request.env.company
+            ).with_context(
+                asistencia=asistencia
+            )
 
-                'email_to': email_to,
-                'email_from': email_from,
-                'attachment_ids': [(4, attachment.id)],
-            }
-
-            mail = request.env['mail.mail'].sudo().create(mail_values)
-
-            # Enviar inmediatamente
-            mail.sudo().send()
-
+            template.send_mail(
+                partner.id,
+                force_send=True,
+                email_values={
+                    'attachment_ids': [
+                        (4, attachment.id)
+                    ],
+                }
+            )
         # ==========================================================
         # DEVOLVER PDF AL NAVEGADOR
         # ==========================================================

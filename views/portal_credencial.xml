@@ -8,8 +8,8 @@
                     
                     <t t-set="icon" t-value="'/instance_sindicato/static/src/img/card.png'"/>
                     <t t-set="title">Mi Credencial</t>
-                    <t t-set="text">Aqui podras ver o descargar tu credencial SNTSS XXV</t>
-                    <t t-set="url" t-value="'/my/credencial'"/>
+                    <t t-set="text">Aqui podras ver o descargar tu credencial SNTSS XXV</t>                    
+                    <t t-set="url" t-value="'/my/credencial/%s' % request.env.user.partner_id.id"/>
                     <t t-set="config_card" t-value="True"/>
                 </t>
             </div>
@@ -22,26 +22,33 @@
             <t t-set="additional_title">Security</t>
             <t t-set="no_breadcrumbs" t-value="1"/>
 
+            <t t-if="partner.matricula">
+                <t t-set="page_title">Mi Credencial</t>
+            </t>
+            <t t-else="">
+                <t t-set="page_title">Mi Familia / Credencial</t>
+            </t>
 
-            <t t-set="page_title">Mi Credencial</t>
-            <t t-set="back_url">/my/</t>
+
+            <t t-if="partner.matricula">
+                <t t-set="back_url">/my/</t>
+            </t>
+            <t t-else="">
+                <t t-set="back_url">/my/children</t>
+            </t>
+
+
+            
+            
             <t t-call="instance_sindicato.portal_page_header"/>
 
             <div class="container">
                
                 <div class="card mx-auto" style="width:500px; height:439px; background-image:url('/instance_sindicato/static/description/company/fondo.png'); text-shadow: -1px #fff,">
-                    <!--
-                    <div style="position:absolute; left:10px; margin:15px;" >
-                        <img src="/instance_sindicato/static/description/company/logo.png" alt="Logo" style="width: 60px;"/>
-                    </div>
-                    <div style="position:absolute; right:25px;  margin:15px;">
-                        <img src="/instance_sindicato/static/description/company/logoIMSS.png" alt="Logo" style="width: 50px;"/>
-                    </div>
-                    -->
+                    
                     <div style="position:absolute; left:0px; top:140px; width:250px;" class="text-center">
                         <div style="" class="text-center">
-
-                            <img t-att-src="'/web/image/res.partner/%s/image_1920' % partner.id"
+                            <img t-att-src="'/my/image/%s' % partner.id"
                                 class="rounded-circle mb-3"
                                 style="width:120px;height:120px;object-fit:cover;"/>
 
@@ -52,7 +59,11 @@
                             </div> 
                             <div style="position:absolute; left:0px; top:180px; width:100%" class="text-center">
                                 <h7 style="color:#aaa;">
-                                    <t t-esc="partner.function"/>
+                                    
+                                    <t t-if="partner.matricula">
+                                        <t t-esc="partner.function"/>
+                                    </t>
+                                    <t t-else="">HIJO</t>
                                 </h7>
                             </div>                          
 
@@ -80,17 +91,40 @@
 
                             <div style="position:absolute; left:0px; top:250px; width:100%" class="text-center">
                                 <h6 style="color:#aaa;">
-                                    <span t-esc="company.street2"/>
+                                    
+                                    <t t-if="partner.matricula">
+                                        <span t-esc="company.street2"/>
+                                    </t>
+                                    <t t-else="">En caso de accidente llamar a</t>
+
                                 </h6>
                             </div> 
                             <div style="position:absolute; left:0px; top:270px; width:100%" class="text-center">
                                 <h6 style="color:#aaa;">
-                                    CP <span t-esc="company.zip"/>, <span t-esc="company.city"/>
+
+                                    <t t-if="partner.matricula">
+                                        CP <span t-esc="company.zip"/>, <span t-esc="company.city"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="partner.parent_contact_id.name"/>
+                                    </t>
+
+
+                                    
                                 </h6>
                             </div> 
                             <div style="position:absolute; left:0px; top:290px; width:100%" class="text-center">
                                 <h6 style="color:#aaa;">
-                                    <span t-esc="company.phone"/>
+                                    
+
+                                    <t t-if="partner.matricula">
+                                        <span t-esc="company.phone"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="partner.parent_contact_id.phone"/>
+                                    </t>
+
+
                                 </h6>
                             </div> 
                     </div>
@@ -105,14 +139,9 @@
                                 <div style="font-size:20px; ">             
                                     VALIDA TUS DOCUMENTOS O FOTO 
                                 </div> 
-
-
                             </div> 
-
- 
                         </div> 
                     </t>                
-                
                 </div>
             </div>
         </t>
