@@ -1,6 +1,7 @@
 from odoo import http
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo import http, api, fields, models, _
 from babel.dates import format_date
 
 import base64
@@ -16,23 +17,8 @@ class PortalAsistencias(CustomerPortal):
         auth='user',
         website=True
     )
-    def portal_asistencia(self, asistencia_id, **kw):
-
-        print("#######################") 
-         
+    def portal_asistencia(self, asistencia_id, **kw):         
         asistencias = request.env['asistencias'].sudo().browse(asistencia_id)
-        
-
-
-        #partner_id = fields.Many2one('res.partner', string='Usuario', required=True)
-        #evento_id = fields.Many2one('eventos', string='Evento', required=True)
-
-        vals = {
-            'partner_id': request.env.user.partner_id,
-            'id': asistencia_id,
-        }
-        #request.env['asistencias'].sudo().create(vals)
-
 
         values = {
             'asistencias': asistencias,
@@ -45,3 +31,36 @@ class PortalAsistencias(CustomerPortal):
             values
         )
 
+
+    @http.route(
+        '/my/asistencias/<int:asistencia_id>/<string:accion>',
+        type='http',
+        auth='user',
+        website=True
+    )
+    def portal_asistencia_accion(self, asistencia_id,accion, **kw):
+
+        asistencias = request.env['asistencias'].sudo().browse(asistencia_id)
+
+
+        if accion == 'entrada':
+            asistencias.write({
+                'fecha_inicio': fields.Datetime.now(),
+            })
+        elif accion == 'salida':
+            asistencias.write({
+                'fecha_termino': fields.Datetime.now(),
+            })
+
+
+
+        values = {
+            'asistencias': asistencias,
+            'page_name': 'eventos',
+            'format_date': format_date,
+        }
+
+        return request.render(
+            'instance_sindicato.portal_asistencias',
+            values
+        )
