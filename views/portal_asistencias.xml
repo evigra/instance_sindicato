@@ -1,0 +1,88 @@
+<odoo>
+
+    <template id="portal_asistencias"   name="Mis Eventos">
+        <t t-call="portal.portal_layout">
+
+            <t t-set="additional_title">Security</t>
+            <t t-set="no_breadcrumbs" t-value="1"/>
+
+
+            <t t-set="page_title">Mis Eventos o Registros</t>
+            <t t-set="back_url">/my/</t>
+            <t t-call="instance_sindicato.portal_page_header"/>
+
+            <div class="container">
+
+                <!-- Lista de eventos -->
+                <div class="row">
+                    <t t-if="asistencias">
+                        Hola 
+                        <t t-esc="asistencias.partner_id.name"/>,
+                        bienvenido al evento
+                        <t t-esc="asistencias.evento_id.name"/> 
+
+
+                            <div class="container">
+                                <div class="card mx-auto" style="width:500px; height:439px; text-shadow: -1px #fff,">
+                                    <div style="" class="text-center">
+                                        <img t-att-src="'/my/image/%s' % asistencias.partner_id.id"
+                                            class="rounded-circle mb-3"
+                                            style="width:120px;height:120px;object-fit:cover;"/>
+
+                                        <div style="position:absolute; left:0px; top:150px; width:100%" class="text-center">
+                                            <h6 style="color:#aaa;">
+                                                <t t-esc="asistencias.partner_id.name"/>
+                                            </h6>
+                                        </div> 
+                                        <div style="position:absolute; left:0px; top:180px; width:100%" class="text-center">
+                                            <h7 style="color:#aaa;">                                                    
+                                                <t t-esc="asistencias.partner_id.function"/>
+                                            </h7>
+                                        </div>                          
+
+                                    </div>
+
+
+                                    <div style="position:absolute; left:0px; top:140px; width:250px;" class="text-center">
+                                        
+                                        <div style="" class="text-center">
+                                            <a target="_new" t-att-href="'/my/registro/%s' % asistencias.id"
+                                            class="btn btn-primary">
+                                                Registrar ENTRADA
+                                            </a>
+                                        </div>
+                                    
+                                    </div>
+                                    <div style="position:absolute; right:0px; top:140px; width:250px;" class="text-center">     
+
+                                        <div style="" class="text-center">
+                                            <a target="_new" t-att-href="'/my/registro/%s' % asistencias.id"
+                                            class="btn btn-primary">
+                                                Registrar SALIDA
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    </t>
+                    <!-- No hay eventos -->
+                    <t t-else="">
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                No tienes asistencias disponibles.
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+
+
+</odoo>

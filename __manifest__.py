@@ -60,6 +60,7 @@ Main Features
         'views/signup.xml',
         
         'views/portal_layout.xml',
+        'views/portal_asistencias.xml',
         'views/portal_credencial.xml',
         'views/portal_eventos.xml',
         #'views/portal_familia.xml',

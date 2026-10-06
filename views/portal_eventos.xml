@@ -121,7 +121,10 @@
                     <t t-esc="evento.name"/>
                 </t>
                 <div>
+                    <!--
                     <a target="_new" t-att-href="'/my/asistencias/%s' % evento.id"
+                    -->
+                    <a target="_new" t-att-href="'/my/registro/%s' % evento.id"
                     class="btn btn-primary">
                         Registrarme
                     </a>

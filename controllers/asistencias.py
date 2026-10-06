@@ -9,19 +9,39 @@ import qrcode
 
 class PortalAsistencias(CustomerPortal):
 
+        
     @http.route(
-        '/my/asistencias/<int:evento_id>',
+        '/my/asistencias/<int:asistencia_id>',
         type='http',
         auth='user',
         website=True
     )
-    def portal_asistencia(self, evento_id, **kw):
+    def portal_asistencia(self, asistencia_id, **kw):
 
-        partner_id = fields.Many2one('res.partner', string='Usuario', required=True)
-        evento_id = fields.Many2one('eventos', string='Evento', required=True)
+        print("#######################") 
+         
+        asistencias = request.env['asistencias'].sudo().browse(asistencia_id)
+        
+
+
+        #partner_id = fields.Many2one('res.partner', string='Usuario', required=True)
+        #evento_id = fields.Many2one('eventos', string='Evento', required=True)
 
         vals = {
             'partner_id': request.env.user.partner_id,
-            'evento_id': evento_id,
+            'id': asistencia_id,
         }
-        request.env['asistencias'].sudo().create(vals)
+        #request.env['asistencias'].sudo().create(vals)
+
+
+        values = {
+            'asistencias': asistencias,
+            'page_name': 'eventos',
+            'format_date': format_date,
+        }
+
+        return request.render(
+            'instance_sindicato.portal_asistencias',
+            values
+        )
+

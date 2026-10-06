@@ -63,12 +63,12 @@ class PortalEventos(CustomerPortal):
 
         
     @http.route(
-        '/my/asistencias/<int:evento_id>',
+        '/my/registro/<int:evento_id>',
         type='http',
         auth='user',
         website=True
     )
-    def portal_asistencia(self, evento_id, **kw):
+    def portal_registro(self, evento_id, **kw):
 
         # ==========================================================
         # DATOS
@@ -103,7 +103,7 @@ class PortalEventos(CustomerPortal):
 
         url = (
             request.httprequest.host_url.rstrip('/')
-            + f'/my/credencial/{partner.id}'
+            + f'/my/asistencias/{asistencia.id}'
         )
 
         qr = qrcode.QRCode(
