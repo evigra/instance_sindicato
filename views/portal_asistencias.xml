@@ -41,7 +41,7 @@
                                         <div style="position:absolute; left:0px; top:0px; width:200px;" class="text-center">
                                             
                                             <div style="" class="text-center">
-                                                <a target="_new" 
+                                                <a  
                                                     t-att-href="'%smy/asistencias/%s/entrada' % (request.httprequest.host_url, asistencias.id)"
                                                     class="btn btn-primary">
                                                     Registrar ENTRADA
@@ -55,7 +55,7 @@
                                         <div style="position:absolute; right:0px; top:0px; width:200px;" class="text-center">     
 
                                             <div style="" class="text-center">
-                                                <a target="_new" 
+                                                <a  
                                                     t-att-href="'%smy/asistencias/%s/salida' % (request.httprequest.host_url, asistencias.id)"
                                                     class="btn btn-primary">
                                                     Registrar SALIDA
