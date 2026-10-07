@@ -8,9 +8,7 @@ import base64
 import io
 import qrcode
 
-class PortalAsistencias(CustomerPortal):
-
-        
+class PortalAsistencias(CustomerPortal):        
     @http.route(
         '/my/asistencias/<int:asistencia_id>',
         type='http',
