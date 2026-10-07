@@ -52,13 +52,12 @@ class PortalAsistencias(CustomerPortal):
 
 
 
-        values = {
-            'asistencias': asistencias,
-            'page_name': 'eventos',
-            'format_date': format_date,
-        }
-
-        return request.render(
-            'instance_sindicato.portal_asistencias',
-            values
-        )
+        return request.make_response("""
+            <html>
+                <body>
+                    <script>
+                        window.close();
+                    </script>
+                </body>
+            </html>
+        """)
